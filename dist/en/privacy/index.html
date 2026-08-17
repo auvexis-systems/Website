@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — Auvexis Systems</title>
-  <meta name="description" content="Privacy policy for Auvexis Systems.">
+  <meta name="description" content="Privacy policy for Auvexis Systems: hosted with Strato, no analytics or marketing tools.">
   <link rel="canonical" href="https://auvexissystems.de/en/privacy/">
   <link rel="alternate" hreflang="de" href="https://auvexissystems.de/datenschutz/">
   <link rel="alternate" hreflang="en" href="https://auvexissystems.de/en/privacy/">
@@ -13,21 +13,24 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Auvexis Systems">
   <meta property="og:title" content="Privacy Policy — Auvexis Systems">
-  <meta property="og:description" content="Privacy policy for Auvexis Systems.">
+  <meta property="og:description" content="Privacy policy for Auvexis Systems: hosted with Strato, no analytics or marketing tools.">
   <meta property="og:url" content="https://auvexissystems.de/en/privacy/">
   <meta property="og:image" content="https://auvexissystems.de/og-image.png">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Privacy Policy — Auvexis Systems">
-  <meta name="twitter:description" content="Privacy policy for Auvexis Systems.">
+  <meta name="twitter:description" content="Privacy policy for Auvexis Systems: hosted with Strato, no analytics or marketing tools.">
 
   <meta name="theme-color" content="#080a0d">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
-
+  <!-- No Google Fonts (or any other third-party) requests: the privacy policy
+       states no external tracking/analytics/font CDN calls are made, so
+       Exo 2 / Inter are not loaded from fonts.googleapis.com. Typography
+       falls back to the system font stack defined in tokens.css
+       (--font-heading / --font-body), which keeps the page's origin list at
+       zero third-party requests. See README "Typography" for how to
+       self-host the brand typefaces later if desired. -->
   <link rel="stylesheet" href="/styles/main.css">
   
 </head>
@@ -37,10 +40,7 @@
   <div class="container site-header__inner">
     <a class="brand" href="/en/">
       <img class="brand__mark" src="/assets/logo-mark.svg" alt="" width="30" height="30">
-      <span class="brand__word">
-        <span class="brand__word-main">AUVEXIS</span>
-        <span class="brand__word-sub">SYSTEMS</span>
-      </span>
+      <span class="brand__word">AUVEXIS <span class="brand__word-sub">SYSTEMS</span></span>
     </a>
 
     <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
@@ -51,17 +51,17 @@
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <ul class="main-nav__list">
         
-        <li><a class="main-nav__link" href="#solutions">Solutions</a></li>
+        <li><a class="main-nav__link" href="/en/#solutions">Solutions</a></li>
         
-        <li><a class="main-nav__link" href="#development">Development</a></li>
+        <li><a class="main-nav__link" href="/en/#development">Development</a></li>
         
-        <li><a class="main-nav__link" href="#knowledge">Knowledge</a></li>
+        <li><a class="main-nav__link" href="/en/#knowledge">Knowledge</a></li>
         
-        <li><a class="main-nav__link" href="#vision">Vision</a></li>
+        <li><a class="main-nav__link" href="/en/#vision">Vision</a></li>
         
-        <li><a class="main-nav__link" href="#about">About</a></li>
+        <li><a class="main-nav__link" href="/en/#about">About</a></li>
         
-        <li><a class="main-nav__link" href="#contact">Contact</a></li>
+        <li><a class="main-nav__link" href="/en/#contact">Contact</a></li>
         
       </ul>
       <a class="btn btn--primary header-cta" href="/en/#contact">Discuss a project</a>
@@ -79,36 +79,102 @@
 </header>
 
   <main id="main">
-    <section class="legal-page">
-  <div class="container">
+    <section class="legal-page section">
+  <div class="container legal-page__container">
     <h1>Privacy Policy</h1>
-    <p class="legal-notice">This privacy policy is an incomplete placeholder (TODO) and must be replaced with a legally reviewed, complete version before the website goes live.</p>
     
-    <div class="legal-section">
-      <h2>Controller</h2>
-      <p>TODO: Insert the data controller pursuant to Art. 4 No. 7 GDPR with full address.</p>
-    </div>
-    
-    <div class="legal-section">
-      <h2>Collection and processing of personal data</h2>
-      <p>TODO: Insert specific details on the contact form, server log files, cookies and any analytics/marketing tools used, including the legal basis under Art. 6 GDPR.</p>
-    </div>
-    
-    <div class="legal-section">
-      <h2>Contact form</h2>
-      <p>TODO: Describe which data is processed when the contact form is used and for how long it is stored.</p>
-    </div>
-    
-    <div class="legal-section">
-      <h2>Hosting</h2>
-      <p>TODO: Insert details of the hosting provider used and, if applicable, the data processing agreement.</p>
-    </div>
-    
-    <div class="legal-section">
-      <h2>Rights of data subjects</h2>
-      <p>TODO: Finalize wording on access, rectification, erasure, restriction, data portability, objection and the right to lodge a complaint with a supervisory authority.</p>
-    </div>
-    
+    <p class="legal-notice">This page is a non-binding English translation of the German privacy policy (Datenschutzerklärung) provided for convenience. The German version is the legally binding original — in case of any discrepancy, the German text takes precedence.</p>
+
+    <div class="legal-body"><h2>1. Data protection at a glance</h2>
+
+<h3>General information</h3>
+<p>The following notes provide a simple overview of what happens to your personal data when you visit this website. Personal data is any data that can be used to personally identify you. Detailed information on the subject of data protection can be found in our privacy policy set out below this text.</p>
+
+<h3>Data collection on this website</h3>
+<h4>Who is responsible for data collection on this website?</h4>
+<p>Data processing on this website is carried out by the website operator. You can find the operator's contact details in the "Notice concerning the party responsible" section of this privacy policy.</p>
+
+<h4>How do we collect your data?</h4>
+<p>Your data is collected in part by you providing it to us. This may, for example, be data you enter into a contact form.</p>
+<p>Other data is collected automatically, or after you have given your consent, when you visit the website, by our IT systems. This is mainly technical data (e.g. internet browser, operating system or time of page access). This data is collected automatically as soon as you enter this website.</p>
+
+<h4>What do we use your data for?</h4>
+<p>Some of the data is collected to ensure the website is provided without errors. Other data may be used to analyse your user behaviour. Insofar as contracts can be concluded or initiated via the website, the data transmitted is also processed for contract offers, orders or other inquiries.</p>
+
+<h4>What rights do you have regarding your data?</h4>
+<p>You have the right at any time to receive free information about the origin, recipient and purpose of your stored personal data. You also have the right to request the correction or deletion of this data. If you have given your consent to data processing, you can revoke this consent at any time with future effect. You also have the right, under certain circumstances, to request the restriction of the processing of your personal data. You furthermore have the right to lodge a complaint with the competent supervisory authority.</p>
+<p>You are welcome to contact us at any time regarding this or any further questions on the subject of data protection.</p>
+
+<h2>2. Hosting</h2>
+<p>We host the content of our website with the following provider:</p>
+
+<h3>Strato</h3>
+<p>The provider is Strato AG, Otto-Ostrowski-Straße 7, 10249 Berlin, Germany (hereinafter "Strato"). When you visit our website, Strato collects various log files, including your IP address.</p>
+<p>For more information, please refer to Strato's privacy policy: <a href="https://www.strato.de/datenschutz/" target="_blank" rel="noopener noreferrer">https://www.strato.de/datenschutz/</a>.</p>
+<p>The use of Strato is based on Art. 6 (1)(f) GDPR. We have a legitimate interest in the most reliable possible presentation of our website. If corresponding consent has been requested, processing is carried out exclusively on the basis of Art. 6 (1)(a) GDPR and § 25 (1) TDDDG (German Telecommunications-Digital-Services-Data-Protection Act), insofar as the consent covers the storage of cookies or access to information on the user's device (e.g. device fingerprinting) within the meaning of the TDDDG. Consent can be revoked at any time.</p>
+
+<h4>Data processing agreement</h4>
+<p>We have concluded a data processing agreement (DPA) for the use of the above-mentioned service. This is a contract required by data protection law that ensures the provider processes the personal data of our website visitors only in accordance with our instructions and in compliance with the GDPR.</p>
+
+<h2>3. General information and mandatory disclosures</h2>
+
+<h3>Data protection</h3>
+<p>The operators of these pages take the protection of your personal data very seriously. We treat your personal data confidentially and in accordance with statutory data protection regulations and this privacy policy.</p>
+<p>When you use this website, various pieces of personal data are collected. Personal data is data that can be used to personally identify you. This privacy policy explains what data we collect and what we use it for. It also explains how and for what purpose this happens.</p>
+<p>We would like to point out that data transmission over the internet (e.g. when communicating by email) may be subject to security vulnerabilities. Complete protection of data against access by third parties is not possible.</p>
+
+<h3>Notice concerning the party responsible</h3>
+<p>The party responsible for data processing on this website is:</p>
+<p>Timo Kaulbars<br>
+Zum Gänseland 21<br>
+59558 Lippstadt, Germany</p>
+<p>Phone: <a href="tel:+4916097714340">016097714340</a><br>
+Email: <a href="mailto:auvexissystems@gmail.com">auvexissystems@gmail.com</a></p>
+<p>The party responsible is the natural or legal person who, alone or jointly with others, determines the purposes and means of the processing of personal data (e.g. names, email addresses, etc.).</p>
+
+<h3>Storage duration</h3>
+<p>Unless a more specific storage period has been stated within this privacy policy, your personal data will remain with us until the purpose for the data processing no longer applies. If you assert a legitimate request for deletion or revoke your consent to data processing, your data will be deleted, unless we have other legally permissible reasons for storing your personal data (e.g. tax or commercial law retention periods); in the latter case, the data will be deleted once these reasons no longer apply.</p>
+
+<h3>General information on the legal basis for data processing on this website</h3>
+<p>If you have consented to data processing, we process your personal data on the basis of Art. 6 (1)(a) GDPR or Art. 9 (2)(a) GDPR, if special categories of data pursuant to Art. 9 (1) GDPR are processed. In the event of explicit consent to the transfer of personal data to third countries, data processing is additionally carried out on the basis of Art. 49 (1)(a) GDPR. If you have consented to the storage of cookies or access to information on your device (e.g. via device fingerprinting), data processing is additionally based on § 25 (1) TDDDG. Consent can be revoked at any time. If your data is required for the performance of a contract or for the implementation of pre-contractual measures, we process your data on the basis of Art. 6 (1)(b) GDPR. Furthermore, we process your data if this is required to fulfil a legal obligation, on the basis of Art. 6 (1)(c) GDPR. Data processing may also be carried out on the basis of our legitimate interest pursuant to Art. 6 (1)(f) GDPR. Information on the relevant legal basis in each individual case is provided in the following paragraphs of this privacy policy.</p>
+
+<h3>Recipients of personal data</h3>
+<p>In the course of our business activities, we work with various external parties. This sometimes requires the transfer of personal data to these external parties. We only pass on personal data to external parties if this is necessary for the performance of a contract, if we are legally obliged to do so (e.g. disclosure of data to tax authorities), if we have a legitimate interest pursuant to Art. 6 (1)(f) GDPR in the disclosure, or if another legal basis permits the disclosure of data. When using processors, we only pass on personal data of our customers on the basis of a valid data processing agreement. In the case of joint processing, a joint controller agreement is concluded.</p>
+
+<h3>Revoking your consent to data processing</h3>
+<p>Many data processing operations are only possible with your express consent. You can revoke consent you have already given at any time. The lawfulness of the data processing carried out until the revocation remains unaffected by the revocation.</p>
+
+<h3>Right to object to the collection of data in special cases and to direct advertising (Art. 21 GDPR)</h3>
+<p>IF DATA PROCESSING IS BASED ON ART. 6(1)(E) OR (F) GDPR, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME, FOR REASONS ARISING FROM YOUR PARTICULAR SITUATION, TO THE PROCESSING OF YOUR PERSONAL DATA; THIS ALSO APPLIES TO PROFILING BASED ON THESE PROVISIONS. THE RESPECTIVE LEGAL BASIS ON WHICH PROCESSING IS BASED CAN BE FOUND IN THIS PRIVACY POLICY. IF YOU OBJECT, WE WILL NO LONGER PROCESS YOUR AFFECTED PERSONAL DATA, UNLESS WE CAN DEMONSTRATE COMPELLING LEGITIMATE GROUNDS FOR THE PROCESSING THAT OVERRIDE YOUR INTERESTS, RIGHTS AND FREEDOMS, OR THE PROCESSING SERVES THE ASSERTION, EXERCISE OR DEFENCE OF LEGAL CLAIMS (OBJECTION PURSUANT TO ART. 21(1) GDPR).</p>
+<p>IF YOUR PERSONAL DATA IS PROCESSED FOR THE PURPOSE OF DIRECT ADVERTISING, YOU HAVE THE RIGHT TO OBJECT AT ANY TIME TO THE PROCESSING OF PERSONAL DATA CONCERNING YOU FOR THE PURPOSE OF SUCH ADVERTISING; THIS ALSO APPLIES TO PROFILING TO THE EXTENT THAT IT IS RELATED TO SUCH DIRECT ADVERTISING. IF YOU OBJECT, YOUR PERSONAL DATA WILL SUBSEQUENTLY NO LONGER BE USED FOR THE PURPOSE OF DIRECT ADVERTISING (OBJECTION PURSUANT TO ART. 21(2) GDPR).</p>
+
+<h3>Right to lodge a complaint with the competent supervisory authority</h3>
+<p>In the event of violations of the GDPR, data subjects have the right to lodge a complaint with a supervisory authority, in particular in the member state of their habitual residence, place of work, or the place of the alleged violation. The right to lodge a complaint exists without prejudice to any other administrative or judicial remedy.</p>
+
+<h3>Right to data portability</h3>
+<p>You have the right to have data that we process automatically on the basis of your consent or in fulfilment of a contract handed over to you or to a third party in a common, machine-readable format. If you request the direct transfer of the data to another controller, this will only be done insofar as it is technically feasible.</p>
+
+<h3>Access, rectification and erasure</h3>
+<p>Within the framework of the applicable statutory provisions, you have the right at any time to free information about your stored personal data, its origin and recipients and the purpose of the data processing, and, if applicable, a right to rectification or erasure of this data. You are welcome to contact us at any time regarding this or any further questions on the subject of personal data.</p>
+
+<h3>Right to restriction of processing</h3>
+<p>You have the right to request the restriction of the processing of your personal data. You can contact us at any time for this purpose. The right to restriction of processing applies in the following cases:</p>
+<ul>
+<li>If you dispute the accuracy of your personal data stored by us, we generally need time to verify this. For the duration of the verification, you have the right to request the restriction of the processing of your personal data.</li>
+<li>If the processing of your personal data was/is unlawful, you can request the restriction of data processing instead of its erasure.</li>
+<li>If we no longer need your personal data, but you need it to assert, exercise or defend legal claims, you have the right to request the restriction of the processing of your personal data instead of its erasure.</li>
+<li>If you have lodged an objection pursuant to Art. 21(1) GDPR, a balance must be struck between your interests and ours. As long as it has not yet been determined whose interests prevail, you have the right to request the restriction of the processing of your personal data.</li>
+</ul>
+<p>If you have restricted the processing of your personal data, this data may — apart from being stored — only be processed with your consent or for the assertion, exercise or defence of legal claims, or for the protection of the rights of another natural or legal person, or for reasons of important public interest of the European Union or of a member state.</p>
+
+<h3>SSL/TLS encryption</h3>
+<p>For security reasons and to protect the transmission of confidential content, such as orders or inquiries that you send to us as the site operator, this site uses SSL/TLS encryption. You can recognise an encrypted connection by the fact that the browser's address line changes from "http://" to "https://" and by the lock icon in your browser line.</p>
+<p>If SSL/TLS encryption is activated, the data you transmit to us cannot be read by third parties.</p>
+
+<h3>Objection to promotional emails</h3>
+<p>The use of contact data published within the scope of the legal notice (Impressum) obligation to send unsolicited advertising and information materials is hereby expressly objected to. The operators of these pages expressly reserve the right to take legal action in the event of unsolicited advertising, such as spam emails.</p></div>
+
+    <p class="legal-source">Content created with the <a href="https://www.e-recht24.de" target="_blank" rel="noopener noreferrer">privacy policy generator by e-recht24.de</a> (German original).</p>
   </div>
 </section>
 
@@ -119,10 +185,7 @@
       <div class="footer-col footer-brand">
         <a class="brand" href="/en/">
           <img class="brand__mark" src="/assets/logo-mark.svg" alt="" width="26" height="26">
-          <span class="brand__word">
-            <span class="brand__word-main">AUVEXIS</span>
-            <span class="brand__word-sub">SYSTEMS</span>
-          </span>
+          <span class="brand__word">AUVEXIS <span class="brand__word-sub">SYSTEMS</span></span>
         </a>
         <p class="footer-brand__tagline">DEVELOP. CONSTRUCT. REALIZE.</p>
       </div>
@@ -130,7 +193,7 @@
       <div class="footer-col">
         <h3>Navigation</h3>
         <ul>
-          <li><a href="#solutions">Solutions</a></li><li><a href="#development">Development</a></li><li><a href="#knowledge">Knowledge</a></li><li><a href="#vision">Vision</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li>
+          <li><a href="/en/#solutions">Solutions</a></li><li><a href="/en/#development">Development</a></li><li><a href="/en/#knowledge">Knowledge</a></li><li><a href="/en/#vision">Vision</a></li><li><a href="/en/#about">About</a></li><li><a href="/en/#contact">Contact</a></li>
         </ul>
       </div>
 

@@ -149,9 +149,16 @@ input, textarea, select { font: inherit; color: inherit; }
   text-decoration: none;
   flex-shrink: 0;
 }
-.brand__mark { width: 30px; height: 30px; }
-.brand__word { display: flex; flex-direction: column; line-height: 1; }
-.brand__word-main {
+.brand__mark { width: 30px; height: 30px; flex-shrink: 0; }
+/* Horizontal wordmark lockup: mark + single-line "AUVEXIS SYSTEMS", not a
+   stacked two-line word. "SYSTEMS" is set lighter/smaller and in the accent
+   blue so the lockup still reads as one unit while keeping AUVEXIS primary. */
+.brand__word {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.35em;
+  line-height: 1;
+  white-space: nowrap;
   font-family: var(--font-heading);
   font-size: var(--fs-md);
   letter-spacing: var(--ls-wide);
@@ -159,11 +166,13 @@ input, textarea, select { font: inherit; color: inherit; }
   font-weight: 700;
 }
 .brand__word-sub {
-  font-family: var(--font-heading);
-  font-size: 0.55rem;
+  font-size: 0.62em;
+  font-weight: 600;
   letter-spacing: var(--ls-wider);
   color: var(--color-primary-highlight);
-  margin-top: 2px;
+}
+@media (max-width: 420px) {
+  .brand__word-sub { display: none; } /* keep the lockup from crowding the smallest phones */
 }
 
 .main-nav__list {
@@ -231,7 +240,12 @@ input, textarea, select { font: inherit; color: inherit; }
 .site-header.is-open .nav-toggle__box span:nth-child(2) { opacity: 0; }
 .site-header.is-open .nav-toggle__box span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 900px) {
+/* 1080px, not 900px: with all 6 nav labels + lang switch + CTA + logo inline,
+   the desktop header genuinely doesn't fit below ~1080px and was overflowing
+   the viewport horizontally at common tablet/small-laptop widths (e.g.
+   1024px) — found during responsive QA. The hamburger drawer now takes over
+   before that cramped zone instead of after it. */
+@media (max-width: 1080px) {
   /* top+height (not inset's bottom:0) so the panel always reaches the true
      viewport bottom even though `.site-header`'s `backdrop-filter` makes it
      the containing block for this fixed element (Chromium quirk: bottom:0
@@ -393,7 +407,11 @@ input, textarea, select { font: inherit; color: inherit; }
 }
 
 /* ---------- Knowledge ---------- */
-.knowledge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-5); }
+/* align-items: start keeps each card's own (possibly open, possibly closed)
+   height — without it, grid's default `stretch` forces every card in a row
+   to the row's tallest height, so opening one <details> visually stretches
+   its still-closed row-mate and leaves empty space inside its border. */
+.knowledge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-5); align-items: start; }
 @media (max-width: 800px) { .knowledge-grid { grid-template-columns: 1fr; } }
 
 .info-box {
@@ -494,11 +512,36 @@ input, textarea, select { font: inherit; color: inherit; }
 
 /* ---------- Legal pages ---------- */
 .legal-page { padding-block: var(--space-9); }
-.legal-page h1 { font-size: var(--fs-3xl); margin-bottom: var(--space-6); }
+.legal-page__container { max-width: 780px; }
+/* overflow-wrap: German legal titles like "Datenschutzerklärung" are long,
+   unbroken single words — at the large H1 size they can exceed the mobile
+   container width with no space for the browser's default wrap to use. */
+.legal-page h1 { font-size: var(--fs-3xl); margin-bottom: var(--space-5); overflow-wrap: anywhere; }
+.legal-meta { font-size: var(--fs-xs); color: var(--color-text-muted); margin-bottom: var(--space-5); }
+/* translationNotice on EN legal pages: informational, not an error/warning —
+   uses the same restrained "future/info" accent as elsewhere, not red/amber. */
 .legal-notice { background: var(--color-status-future-bg); border: 1px solid rgba(167,139,250,0.3); border-radius: var(--radius-md); padding: var(--space-5); margin-bottom: var(--space-8); font-size: var(--fs-sm); color: var(--color-text-primary); }
-.legal-section { margin-bottom: var(--space-7); }
-.legal-section h2 { font-size: var(--fs-lg); margin-bottom: var(--space-3); }
-.legal-section p { font-size: var(--fs-sm); }
+
+/* overflow-wrap: anywhere on the whole block, not just <p>: some eRecht24
+   heading text is a single unbroken slash-joined compound (e.g.
+   "Verbraucherstreitbeilegung/Universalschlichtungsstelle", 54 characters)
+   with no space for the browser's default word-wrap to break on — without
+   this it overflows the container width on mobile regardless of viewport
+   size, since it doesn't shrink like a normal wrapping line would. */
+.legal-body { font-size: var(--fs-sm); line-height: var(--lh-normal); color: var(--color-text-secondary); overflow-wrap: anywhere; }
+.legal-body h2 { font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--color-text-primary); margin: var(--space-8) 0 var(--space-4); }
+.legal-body h2:first-child { margin-top: 0; }
+.legal-body h3 { font-family: var(--font-heading); font-size: var(--fs-md); color: var(--color-text-primary); margin: var(--space-6) 0 var(--space-3); }
+.legal-body h4 { font-family: var(--font-heading); font-size: var(--fs-base); color: var(--color-text-primary); margin: var(--space-5) 0 var(--space-2); }
+.legal-body p { margin-bottom: var(--space-4); }
+.legal-body ul { margin: 0 0 var(--space-4); padding-left: 1.3em; }
+.legal-body li { margin-bottom: var(--space-2); }
+.legal-body a { color: var(--color-primary-highlight); text-decoration: underline; text-underline-offset: 2px; }
+.legal-body a:hover { color: var(--color-text-primary); }
+.legal-body strong { color: var(--color-text-primary); font-weight: 600; }
+.legal-source { margin-top: var(--space-7); padding-top: var(--space-5); border-top: 1px solid var(--color-border); font-size: var(--fs-xs); color: var(--color-text-muted); }
+.legal-source a { color: var(--color-text-muted); text-decoration: underline; text-underline-offset: 2px; }
+.legal-source a:hover { color: var(--color-primary-highlight); }
 
 /* ---------- 404 ---------- */
 .not-found { min-height: 60vh; display: grid; place-items: center; text-align: center; padding-block: var(--space-9); }

@@ -2,10 +2,7 @@
   <div class="container site-header__inner">
     <a class="brand" href="{{page.homeHref}}">
       <img class="brand__mark" src="{{page.assetsPrefix}}assets/logo-mark.svg" alt="" width="30" height="30">
-      <span class="brand__word">
-        <span class="brand__word-main">AUVEXIS</span>
-        <span class="brand__word-sub">SYSTEMS</span>
-      </span>
+      <span class="brand__word">AUVEXIS <span class="brand__word-sub">SYSTEMS</span></span>
     </a>
 
     <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="main-nav">
@@ -16,7 +13,7 @@
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <ul class="main-nav__list">
         {{#each header.nav}}
-        <li><a class="main-nav__link" href="{{page.homeHref}}{{href}}">{{label}}</a></li>
+        <li><a class="main-nav__link" href="{{fullHref}}">{{label}}</a></li>
         {{/each}}
       </ul>
       <a class="btn btn--primary header-cta" href="{{page.homeHref}}#contact">{{header.cta}}</a>

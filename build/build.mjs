@@ -99,7 +99,14 @@ function finalizePageHreflang(page) {
 }
 
 function assemblePage({ content, page, mainHtml }) {
-  const ctx = { ...content, page };
+  // Precompute each nav item's fully-qualified href (page.homeHref + href) here,
+  // in JS, rather than inside the {{#each}} template loop. The template engine
+  // swaps render context to the loop item for the loop body, so a reference to
+  // {{page.homeHref}} inside {{#each header.nav}} can never see the outer page
+  // object — it silently resolves to "" and leaves a bare "#anchor" href that
+  // only works while already on the homepage. See README "Known issues fixed".
+  const navWithFullHref = content.header.nav.map((item) => ({ ...item, fullHref: page.homeHref + item.href }));
+  const ctx = { ...content, page, header: { ...content.header, nav: navWithFullHref } };
   const headerHtml = render(partials.header, ctx);
   const footerHtml = render(partials.footer, ctx);
   const fullCtx = { ...ctx, headerHtml, mainHtml, footerHtml };

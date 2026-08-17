@@ -33,9 +33,16 @@
   --color-status-future: #a78bfa;
   --color-status-future-bg: rgba(167, 139, 250, 0.12);
 
-  /* Typography */
-  --font-heading: "Exo 2", "Segoe UI", system-ui, sans-serif;
-  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+  /* Typography — system font stack, no external font requests (see
+     templates/layout.html: Exo 2 / Inter are not loaded from Google Fonts
+     in production, to keep the site's third-party request count at zero).
+     -apple-system/Segoe UI/Roboto covers the vast majority of desktop and
+     mobile OSes with a clean, geometric sans that reads close to the brand
+     typefaces. Self-host Exo 2 (headings) and Inter (body) here — and add
+     them back as the first stack entry — if licensed font files become
+     available later; see README "Typography". */
+  --font-heading: -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-body: -apple-system, "Segoe UI", Roboto, system-ui, sans-serif;
 
   --fs-xs: 0.8125rem;
   --fs-sm: 0.9375rem;

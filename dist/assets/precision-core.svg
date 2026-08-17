@@ -2,17 +2,22 @@
   <defs>
     <linearGradient id="pcSteel" x1="140" y1="60" x2="340" y2="420" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.5" stop-color="#C7CEDA"/>
-      <stop offset="1" stop-color="#7C8494"/>
+      <stop offset="0.4" stop-color="#E4E8EF"/>
+      <stop offset="0.7" stop-color="#AEB6C4"/>
+      <stop offset="1" stop-color="#707A8C"/>
     </linearGradient>
     <radialGradient id="pcGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.75"/>
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </radialGradient>
     <linearGradient id="pcLine" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#3B82F6" stop-opacity="0"/>
-      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.85"/>
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pcEdge" x1="240" y1="70" x2="115" y2="340" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
   </defs>
 
@@ -29,16 +34,30 @@
     <line x1="438" y1="240" x2="462" y2="240"/>
   </g>
 
+  <!-- corner registration marks: precision-instrument detailing -->
+  <g stroke="#253246" stroke-width="1" opacity="0.8">
+    <path d="M96 96 h16 M96 96 v16"/>
+    <path d="M384 96 h-16 M384 96 v16"/>
+    <path d="M96 384 h16 M96 384 v-16"/>
+    <path d="M384 384 h-16 M384 384 v-16"/>
+  </g>
+
   <!-- glow core -->
-  <circle cx="240" cy="300" r="70" fill="url(#pcGlow)"/>
+  <circle cx="240" cy="300" r="66" fill="url(#pcGlow)"/>
 
   <!-- controlled light line -->
-  <rect x="90" y="298" width="300" height="2" fill="url(#pcLine)"/>
+  <rect x="90" y="298.5" width="300" height="1.4" fill="url(#pcLine)"/>
 
   <!-- precision A structure -->
-  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="url(#pcSteel)" opacity="0.96"/>
-  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="none" stroke="#0D1117" stroke-width="1" opacity="0.4"/>
-  <circle cx="240" cy="300" r="6" fill="#3B82F6"/>
+  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="url(#pcSteel)"/>
+  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="none" stroke="#0D1117" stroke-width="1" opacity="0.45"/>
+  <!-- machined bevel highlight along the leading edge -->
+  <path d="M240 76 L124 336" stroke="url(#pcEdge)" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- inner facet lines suggesting a machined chamfer -->
+  <path d="M240 100 L336 322 M240 100 L144 322" stroke="#0D1117" stroke-width="1" opacity="0.22"/>
+
+  <circle cx="240" cy="300" r="5.5" fill="#3B82F6"/>
+  <circle cx="240" cy="300" r="2" fill="#FFFFFF"/>
 
   <!-- fine construction lines -->
   <g stroke="#253246" stroke-width="1">

@@ -1,12 +1,11 @@
-<section class="legal-page">
-  <div class="container">
+<section class="legal-page section">
+  <div class="container legal-page__container">
     <h1>{{legalContent.title}}</h1>
-    <p class="legal-notice">{{legalContent.placeholderNote}}</p>
-    {{#each legalContent.sections}}
-    <div class="legal-section">
-      <h2>{{heading}}</h2>
-      <p>{{body}}</p>
-    </div>
-    {{/each}}
+    {{#if legalContent.lastUpdated}}<p class="legal-meta">{{legalContent.lastUpdated}}</p>{{/if}}
+    {{#if legalContent.translationNotice}}<p class="legal-notice">{{legalContent.translationNotice}}</p>{{/if}}
+
+    <div class="legal-body">{{{legalContent.bodyHtml}}}</div>
+
+    {{#if legalContent.sourceNote}}<p class="legal-source">{{{legalContent.sourceNote}}}</p>{{/if}}
   </div>
 </section>

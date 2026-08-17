@@ -1,16 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" role="img" aria-label="Auvexis Systems Markenzeichen">
   <defs>
-    <linearGradient id="avxSteel" x1="10" y1="10" x2="90" y2="90" gradientUnits="userSpaceOnUse">
+    <linearGradient id="avxSteel" x1="14" y1="8" x2="86" y2="88" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#FFFFFF"/>
-      <stop offset="0.55" stop-color="#C7CEDA"/>
-      <stop offset="1" stop-color="#8891A1"/>
+      <stop offset="0.45" stop-color="#D7DCE6"/>
+      <stop offset="0.75" stop-color="#9AA3B3"/>
+      <stop offset="1" stop-color="#6B7385"/>
     </linearGradient>
     <radialGradient id="avxGlow" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.6"/>
       <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
     </radialGradient>
   </defs>
-  <circle cx="50" cy="66" r="16" fill="url(#avxGlow)"/>
+  <circle cx="50" cy="70" r="12" fill="url(#avxGlow)"/>
   <path d="M50 8 L90 82 L63 82 L50 56 L37 82 L10 82 Z" fill="url(#avxSteel)"/>
-  <circle cx="50" cy="66" r="3.4" fill="#3B82F6"/>
+  <path d="M50 8 L90 82 L63 82 L50 56 L37 82 L10 82 Z" fill="none" stroke="#0D1117" stroke-width="1" stroke-opacity="0.4"/>
+  <path d="M13.5 79 L50 9" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+  <circle cx="50" cy="70" r="2.8" fill="#3B82F6"/>
 </svg>

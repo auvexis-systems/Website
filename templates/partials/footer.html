@@ -4,10 +4,7 @@
       <div class="footer-col footer-brand">
         <a class="brand" href="{{page.homeHref}}">
           <img class="brand__mark" src="{{page.assetsPrefix}}assets/logo-mark.svg" alt="" width="26" height="26">
-          <span class="brand__word">
-            <span class="brand__word-main">AUVEXIS</span>
-            <span class="brand__word-sub">SYSTEMS</span>
-          </span>
+          <span class="brand__word">AUVEXIS <span class="brand__word-sub">SYSTEMS</span></span>
         </a>
         <p class="footer-brand__tagline">{{footer.tagline}}</p>
       </div>
@@ -15,7 +12,7 @@
       <div class="footer-col">
         <h3>{{footer.navTitle}}</h3>
         <ul>
-          {{#each header.nav}}<li><a href="{{page.homeHref}}{{href}}">{{label}}</a></li>{{/each}}
+          {{#each header.nav}}<li><a href="{{fullHref}}">{{label}}</a></li>{{/each}}
         </ul>
       </div>
 

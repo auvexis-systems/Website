@@ -1,4 +1,29 @@
+# Dependencies (not installed in this delivery — see README "Build & run")
 node_modules/
+
+# Build intermediates (tsc emits here before postcompile.mjs moves the result
+# into src/scripts/main.js — see build/postcompile.mjs)
 build/ts-out/
+
+# OS cruft
 .DS_Store
+Thumbs.db
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs
 *.log
+npm-debug.log*
+
+# Secrets / local env — never commit these
+.env
+.env.*
+*.pem
+*.key
+
+# NOTE: dist/ is intentionally NOT ignored — it's committed so the site can
+# be deployed directly (e.g. GitHub Pages) without a build step. Regenerate
+# it with `npm run build` after any change to content/, templates/, or src/.
