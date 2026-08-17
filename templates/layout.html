@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="{{htmlLang}}" dir="{{dir}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{page.title}}</title>
+  <meta name="description" content="{{page.description}}">
+  <link rel="canonical" href="{{page.canonical}}">
+  <link rel="alternate" hreflang="de" href="{{page.hreflangDe}}">
+  <link rel="alternate" hreflang="en" href="{{page.hreflangEn}}">
+  <link rel="alternate" hreflang="x-default" href="{{page.hreflangDe}}">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{meta.siteName}}">
+  <meta property="og:title" content="{{page.title}}">
+  <meta property="og:description" content="{{page.description}}">
+  <meta property="og:url" content="{{page.canonical}}">
+  <meta property="og:image" content="{{page.ogImageUrl}}">
+  <meta property="og:locale" content="{{page.ogLocale}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{page.title}}">
+  <meta name="twitter:description" content="{{page.description}}">
+
+  <meta name="theme-color" content="#080a0d">
+  <link rel="icon" href="{{page.assetsPrefix}}assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap">
+
+  <link rel="stylesheet" href="{{page.assetsPrefix}}styles/main.css">
+  {{{page.jsonLd}}}
+</head>
+<body>
+  <a class="skip-link" href="#main">{{skipLink}}</a>
+  {{{headerHtml}}}
+  <main id="main">
+    {{{mainHtml}}}
+  </main>
+  {{{footerHtml}}}
+  <script src="{{page.assetsPrefix}}scripts/main.js" defer></script>
+</body>
+</html>

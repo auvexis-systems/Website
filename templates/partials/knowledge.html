@@ -1,0 +1,21 @@
+<section class="knowledge section" id="knowledge">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{knowledge.kicker}}</p>
+      <h2 class="section-title">{{knowledge.title}}</h2>
+      <p class="section-intro">{{knowledge.intro}}</p>
+    </div>
+
+    <div class="knowledge-grid reveal">
+      {{#each knowledge.items}}
+      <details class="info-box" id="{{id}}">
+        <summary class="info-box__question">
+          <span>{{question}}</span>
+          <svg class="info-box__icon" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 4v12M4 10h12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </summary>
+        <p class="info-box__answer">{{answer}}</p>
+      </details>
+      {{/each}}
+    </div>
+  </div>
+</section>

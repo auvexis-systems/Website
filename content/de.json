@@ -1,0 +1,298 @@
+{
+  "locale": "de",
+  "dir": "ltr",
+  "htmlLang": "de-DE",
+  "meta": {
+    "siteName": "Auvexis Systems",
+    "titleHome": "Auvexis Systems — Entwickeln. Konstruieren. Realisieren.",
+    "descriptionHome": "Auvexis Systems entwickelt KI-Systeme, Software und physische Prototypen an der Schnittstelle von Intelligence, Logic und Physical. Aktueller Stand: im Aufbau — transparent dokumentiert.",
+    "ogImage": "/assets/og-image.jpg"
+  },
+  "skipLink": "Zum Hauptinhalt springen",
+  "header": {
+    "nav": [
+      { "label": "Solutions", "href": "#solutions" },
+      { "label": "Development", "href": "#development" },
+      { "label": "Knowledge", "href": "#knowledge" },
+      { "label": "Vision", "href": "#vision" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Projekt besprechen",
+    "langSwitchLabel": "Sprache wechseln",
+    "menuOpen": "Menü öffnen",
+    "menuClose": "Menü schließen"
+  },
+  "hero": {
+    "kicker": "SYSTEMARCHITEKTUR & ENGINEERING",
+    "headlineLines": ["ENTWICKELN.", "KONSTRUIEREN.", "REALISIEREN."],
+    "subheadline": "Auvexis Systems verbindet intelligente Software mit physischer Konstruktion — von der ersten Idee bis zum funktionsfähigen Prototyp.",
+    "ctaPrimary": { "label": "Entwicklung ansehen", "href": "#development" },
+    "ctaSecondary": { "label": "Auvexis kennenlernen", "href": "#about" },
+    "visualCaption": "Precision Core — Markenvisualisierung",
+    "statusNote": "Auvexis Systems befindet sich aktuell im Aufbau."
+  },
+  "architecture": {
+    "kicker": "SYSTEMPRINZIP",
+    "title": "Intelligence → Logic → Physical",
+    "intro": "Drei Ebenen, ein durchgängiges System: von der intelligenten Entscheidung über die softwareseitige Umsetzung bis zur physischen Realisierung.",
+    "stages": [
+      {
+        "id": "intelligence",
+        "label": "INTELLIGENCE",
+        "title": "Intelligenz",
+        "description": "KI-Systeme, Agenten, Wissenssysteme und Entscheidungsunterstützung — die Denkebene eines Systems.",
+        "tags": ["AI Systems", "Agents", "Knowledge", "Decision Support"]
+      },
+      {
+        "id": "logic",
+        "label": "LOGIC",
+        "title": "Logik",
+        "description": "Software, Automatisierung, Integration und Datenverarbeitung — die Ebene, die Intelligenz in verlässliche Abläufe übersetzt.",
+        "tags": ["Software", "Automation", "Integration", "Data"]
+      },
+      {
+        "id": "physical",
+        "label": "PHYSICAL",
+        "title": "Physisch",
+        "description": "Engineering, Prototyping, Hardware und Embedded Systems — dort, wo digitale Logik in der realen Welt ankommt.",
+        "tags": ["Engineering", "Prototyping", "Hardware", "Embedded Systems"]
+      }
+    ]
+  },
+  "solutions": {
+    "kicker": "LEISTUNGSFELDER",
+    "title": "Solutions",
+    "intro": "Auvexis Systems baut an sechs Leistungsfeldern — jedes davon aktuell in aktiver Entwicklung. Kein Feld ist bereits ein marktreifes Produkt.",
+    "items": [
+      {
+        "id": "ai-systems-agents",
+        "icon": "brain",
+        "title": "AI Systems & Agents",
+        "status": "in-development",
+        "description": "Individuelle KI-Agenten, Multi-Agent-Systeme, automatisierte Workflows und spezialisierte Assistenten mit Tool- und API-Zugriff.",
+        "topics": ["Individuelle KI-Agenten", "Multi-Agent-Systeme", "Automatisierte AI-Workflows", "Spezialisierte Assistenten", "Tool- & API-Nutzung durch Agenten", "Unternehmensinterne KI-Systeme"]
+      },
+      {
+        "id": "software-ai-tools",
+        "icon": "code",
+        "title": "Software & AI Tools",
+        "status": "in-development",
+        "description": "Individuelle Softwarelösungen und KI-gestützte Programme, die bestehende Prozesse sinnvoll erweitern.",
+        "topics": ["Individuelle Softwarelösungen", "KI-gestützte Programme", "Interne Tools", "Datenverarbeitung", "Automatisierungssoftware", "AI-Integration in bestehende Prozesse"]
+      },
+      {
+        "id": "prompt-skill-systems",
+        "icon": "layers",
+        "title": "Prompt & Skill Systems",
+        "status": "in-development",
+        "description": "Strukturierte Prompt-Datenbanken und wiederverwendbare Skill-Bibliotheken als Grundlage modularer Wissenssysteme.",
+        "topics": ["Strukturierte Prompt-Datenbanken", "Skill-Bibliotheken", "Wiederverwendbare AI-Workflows", "Prompt Templates", "Agent Instructions", "Modulare Wissenssysteme"]
+      },
+      {
+        "id": "automation",
+        "icon": "workflow",
+        "title": "Automation",
+        "status": "in-development",
+        "description": "Prozessautomatisierung und intelligente Assistenzsysteme, die wiederkehrende Aufgaben zuverlässig übernehmen.",
+        "topics": ["Prozessautomatisierung", "AI-Workflows", "Datenverarbeitung", "Wiederkehrende Aufgaben", "Systemintegration", "Intelligente Assistenzsysteme"]
+      },
+      {
+        "id": "engineering-prototyping",
+        "icon": "wrench",
+        "title": "Engineering & Prototyping",
+        "status": "prototyping",
+        "description": "3D-Druck, CAD-Konstruktion und Funktionsprototypen als physisches Gegenstück zur digitalen Entwicklung.",
+        "topics": ["3D-Druck", "CAD / Konstruktion", "Funktionsprototypen", "Gehäuseentwicklung", "Hardwaretests", "Technische Experimente"]
+      },
+      {
+        "id": "embedded-systems",
+        "icon": "cpu",
+        "title": "Embedded Systems / Hardware",
+        "status": "future",
+        "description": "Langfristige Verbindung von Software und Hardware — von Mikrocontrollern bis Edge AI.",
+        "topics": ["Mikrocontroller", "Sensorik", "Hardware-Software-Verbindungen", "Edge AI", "Physical Computing", "Eigene Hardwareprodukte"]
+      }
+    ]
+  },
+  "pipeline": {
+    "kicker": "TRANSPARENZ",
+    "title": "Development Pipeline",
+    "intro": "Ein ehrlicher Blick auf das, woran aktuell gearbeitet wird — ohne erfundene Kennzahlen oder Fortschrittsprozente.",
+    "items": [
+      {
+        "id": "core-agent-framework",
+        "title": "Core Agent Framework",
+        "status": "in-development",
+        "description": "Modulare Grundlage für spezialisierte AI-Agenten und Workflows."
+      },
+      {
+        "id": "avs-beats",
+        "title": "AvS Beats",
+        "status": "in-development",
+        "description": "Experimentelle KI-gestützte Musik- und Content-Pipeline."
+      },
+      {
+        "id": "engineering-prototypes",
+        "title": "Engineering Prototypes",
+        "status": "prototyping",
+        "description": "Technische Experimente, Konstruktion und additive Fertigung."
+      },
+      {
+        "id": "vyro-b",
+        "title": "VYRO-B",
+        "status": "future-concept",
+        "description": "Langfristige Forschungsvision eines intelligenten physischen AI-Begleiters."
+      }
+    ]
+  },
+  "knowledge": {
+    "kicker": "WISSEN",
+    "title": "Knowledge",
+    "intro": "Technologie verständlich erklärt — unabhängig davon, ob du zum ersten Mal von KI-Agenten hörst oder tief im Thema steckst.",
+    "items": [
+      {
+        "id": "was-ist-ein-ai-agent",
+        "question": "Was ist ein AI Agent?",
+        "answer": "Ein AI Agent ist ein KI-System, das nicht nur antwortet, sondern eigenständig Schritte plant und ausführt, um ein Ziel zu erreichen — zum Beispiel Informationen recherchieren, Werkzeuge nutzen oder mehrere Aufgaben nacheinander abarbeiten."
+      },
+      {
+        "id": "agent-vs-chatbot",
+        "question": "Was ist der Unterschied zwischen einem AI Agent und einem Chatbot?",
+        "answer": "Ein Chatbot beantwortet primär Fragen in einem Dialog. Ein AI Agent geht darüber hinaus: Er kann Aufgaben in Teilschritte zerlegen, Werkzeuge und Schnittstellen nutzen und Entscheidungen innerhalb eines definierten Rahmens selbstständig treffen."
+      },
+      {
+        "id": "was-bedeutet-automation",
+        "question": "Was bedeutet Automation?",
+        "answer": "Automation beschreibt Systeme, die wiederkehrende Aufgaben ohne manuelles Eingreifen ausführen — von einfachen Regelwerken bis zu komplexen, KI-gestützten Abläufen, die sich an wechselnde Situationen anpassen."
+      },
+      {
+        "id": "was-ist-prompt-engineering",
+        "question": "Was ist Prompt Engineering?",
+        "answer": "Prompt Engineering ist die gezielte Formulierung von Anweisungen an ein KI-System, um zuverlässige, präzise und wiederholbare Ergebnisse zu erzielen — vergleichbar mit einer klaren Aufgabenstellung an einen sehr fähigen, aber wortwörtlich denkenden Mitarbeiter."
+      },
+      {
+        "id": "warum-software-und-hardware",
+        "question": "Warum werden Software und Hardware kombiniert?",
+        "answer": "Intelligente Software entfaltet ihr volles Potenzial oft erst, wenn sie mit der physischen Welt interagieren kann. Die Kombination aus Logik und physischem System ermöglicht Anwendungen, die über den Bildschirm hinausgehen."
+      }
+    ]
+  },
+  "transparency": {
+    "kicker": "STATUS",
+    "title": "Auvexis Systems befindet sich im Aufbau.",
+    "paragraphs": [
+      "Viele der hier gezeigten Systeme befinden sich aktuell in Entwicklung, im Prototyping oder noch in der Konzeptphase. Diese Website dokumentiert diesen Fortschritt bewusst transparent — ohne ihn größer darzustellen, als er ist.",
+      "Es gibt aktuell keine veröffentlichten Produkte, keine Kunden und keine belastbaren Kennzahlen, die wir hier zeigen könnten. Was es gibt, ist eine klare Richtung und kontinuierliche Entwicklungsarbeit an der Schnittstelle von Intelligence, Logic und Physical.",
+      "Diese Entwicklung ist Teil der Geschichte der Marke — nicht etwas, das versteckt werden muss."
+    ],
+    "statusLegend": [
+      { "status": "in-development", "label": "In Entwicklung" },
+      { "status": "prototyping", "label": "Prototyp" },
+      { "status": "concept", "label": "Konzept" },
+      { "status": "future", "label": "Future Vision" }
+    ]
+  },
+  "vision": {
+    "kicker": "ZUKUNFTSVISION",
+    "title": "VYRO-B",
+    "subtitle": "Visual Young Robot Operator — Buddy",
+    "status": "future-concept",
+    "statusLabel": "Future Concept — kein Produkt",
+    "paragraphs": [
+      "VYRO-B ist aktuell kein Produkt und auch kein konkretes Entwicklungsprojekt mit festem Zeitplan. Es handelt sich um eine langfristige Forschungsvision: einen intelligenten physischen KI-Begleiter, der Intelligence, Logic und Physical in einem System zusammenführt.",
+      "Diese Vision beschreibt eine mögliche Richtung, in die sich Auvexis Systems langfristig entwickeln könnte — nicht mehr und nicht weniger."
+    ]
+  },
+  "about": {
+    "kicker": "ÜBER AUVEXIS",
+    "title": "Warum Auvexis Systems",
+    "paragraphs": [
+      "Auvexis Systems entsteht aus der Überzeugung, dass intelligente Software nicht am Bildschirm enden muss. Wir verbinden KI-Systeme, Software-Engineering und physisches Prototyping in einem gemeinsamen Entwicklungsansatz.",
+      "Wir richten uns bewusst an ein breites Publikum: von Privatpersonen und Selbstständigen, die wenig Zeit für die Auseinandersetzung mit KI-Technologie haben, bis hin zu kleinen und mittleren Unternehmen, die Automatisierung und KI-Agenten sinnvoll einsetzen möchten — ohne sich durch Buzzwords kämpfen zu müssen."
+    ]
+  },
+  "contact": {
+    "kicker": "KONTAKT",
+    "title": "Projekt besprechen",
+    "intro": "Erzähl uns kurz, worum es geht. Wir melden uns, sobald wir deine Anfrage gesichtet haben.",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail",
+      "organisation": "Organisation (optional)",
+      "projectType": "Projektart",
+      "projectTypeOptions": ["AI / Agent", "Software", "Automation", "Engineering", "Allgemeine Anfrage"],
+      "message": "Nachricht",
+      "submit": "Anfrage senden",
+      "sending": "Wird gesendet …",
+      "requiredNote": "Mit * markierte Felder sind erforderlich.",
+      "successTitle": "Dein E-Mail-Programm wird geöffnet.",
+      "successBody": "Dieses Formular ist noch nicht an ein Backend angebunden. Wir öffnen daher dein E-Mail-Programm mit vorausgefüllter Anfrage — bitte sende die E-Mail von dort aus ab.",
+      "errorTitle": "Da ist etwas schiefgelaufen.",
+      "errorBody": "Bitte prüfe deine Eingaben oder schreibe uns direkt per E-Mail.",
+      "fallbackNote": "Kontaktformular ohne Backend-Anbindung — schreib uns bis dahin gerne direkt:",
+      "invalidEmail": "Bitte gib eine gültige E-Mail-Adresse ein.",
+      "requiredField": "Dieses Feld wird benötigt."
+    },
+    "directEmailLabel": "Direkt per E-Mail"
+  },
+  "footer": {
+    "tagline": "ENTWICKELN. KONSTRUIEREN. REALISIEREN.",
+    "navTitle": "Navigation",
+    "legalTitle": "Rechtliches",
+    "legal": [
+      { "label": "Impressum", "href": "/impressum/" },
+      { "label": "Datenschutz", "href": "/datenschutz/" },
+      { "label": "Cookie-Einstellungen", "href": "/cookie-einstellungen/" }
+    ],
+    "langTitle": "Sprache",
+    "copyright": "© 2026 Auvexis Systems"
+  },
+  "statusLabels": {
+    "in-development": "In Entwicklung",
+    "prototyping": "Prototyp",
+    "concept": "Konzept",
+    "future": "Future Development",
+    "future-concept": "Future Concept"
+  },
+  "legal": {
+    "impressum": {
+      "title": "Impressum",
+      "metaDescription": "Impressum von Auvexis Systems.",
+      "sections": [
+        { "heading": "Angaben gemäß § 5 TMG", "body": "TODO: Vollständiger Name / Firmenname, Anschrift und Vertretungsberechtigte(r) einfügen." },
+        { "heading": "Kontakt", "body": "TODO: Telefonnummer und E-Mail-Adresse einfügen." },
+        { "heading": "Umsatzsteuer-ID", "body": "TODO: Umsatzsteuer-Identifikationsnummer einfügen, sofern vorhanden." },
+        { "heading": "Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV", "body": "TODO: Verantwortliche Person mit Anschrift einfügen." },
+        { "heading": "Streitschlichtung", "body": "TODO: Hinweis zur EU-Streitschlichtungsplattform und Verbraucherschlichtung final prüfen und einfügen, sofern zutreffend." }
+      ],
+      "placeholderNote": "Diese Seite enthält noch nicht final ausgefüllte Pflichtangaben (TODO). Vor Live-Schaltung der Website müssen diese durch rechtsverbindliche, geprüfte Angaben ersetzt werden."
+    },
+    "datenschutz": {
+      "title": "Datenschutz",
+      "metaDescription": "Datenschutzerklärung von Auvexis Systems.",
+      "sections": [
+        { "heading": "Verantwortlicher", "body": "TODO: Verantwortliche Stelle gemäß Art. 4 Nr. 7 DSGVO mit vollständiger Anschrift einfügen." },
+        { "heading": "Erhebung und Verarbeitung personenbezogener Daten", "body": "TODO: Konkrete Angaben zu Kontaktformular, Server-Logfiles, Cookies und ggf. eingesetzten Analyse-/Marketing-Tools einfügen, inklusive Rechtsgrundlage nach Art. 6 DSGVO." },
+        { "heading": "Kontaktformular", "body": "TODO: Beschreibung, welche Daten bei Nutzung des Kontaktformulars verarbeitet werden und wie lange sie gespeichert werden." },
+        { "heading": "Hosting", "body": "TODO: Angaben zum eingesetzten Hosting-Anbieter und ggf. Auftragsverarbeitungsvertrag einfügen." },
+        { "heading": "Rechte der betroffenen Personen", "body": "TODO: Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch sowie Beschwerderecht bei einer Aufsichtsbehörde final formulieren." }
+      ],
+      "placeholderNote": "Diese Datenschutzerklärung ist ein unvollständiger Platzhalter (TODO) und muss vor Live-Schaltung durch eine rechtlich geprüfte, vollständige Fassung ersetzt werden."
+    },
+    "cookies": {
+      "title": "Cookie-Einstellungen",
+      "metaDescription": "Cookie-Einstellungen von Auvexis Systems.",
+      "sections": [
+        { "heading": "Aktueller Stand", "body": "Diese Website setzt aktuell keine Marketing- oder Tracking-Cookies ein. Technisch notwendige Speicherfunktionen können sich mit künftigen Funktionen ändern." },
+        { "heading": "Zukünftige Cookie-Nutzung", "body": "TODO: Sobald Analyse-, Marketing- oder Komfort-Cookies eingesetzt werden, muss hier ein vollständiges Cookie-Consent-Management inklusive granularer Opt-in/Opt-out-Steuerung ergänzt werden." }
+      ],
+      "placeholderNote": "Dieser Bereich wird erweitert, sobald tatsächlich Cookies über technisch notwendige Funktionen hinaus eingesetzt werden."
+    }
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "body": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "cta": "Zur Startseite"
+  }
+}

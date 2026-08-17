@@ -1,0 +1,53 @@
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{contact.kicker}}</p>
+      <h2 class="section-title">{{contact.title}}</h2>
+      <p class="section-intro">{{contact.intro}}</p>
+    </div>
+
+    <div class="contact-grid reveal">
+      <form class="contact-form" id="contact-form" novalidate data-contact-form
+            data-msg-required="{{contact.form.requiredField}}" data-msg-email="{{contact.form.invalidEmail}}"
+            data-msg-sending="{{contact.form.sending}}" data-msg-submit="{{contact.form.submit}}"
+            data-success-title="{{contact.form.successTitle}}" data-success-body="{{contact.form.successBody}}"
+            data-error-title="{{contact.form.errorTitle}}" data-error-body="{{contact.form.errorBody}}">
+        <div class="form-field">
+          <label for="cf-name">{{contact.form.name}} <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="cf-name" name="name" autocomplete="name" required aria-required="true">
+          <p class="form-field__error" role="alert"></p>
+        </div>
+        <div class="form-field">
+          <label for="cf-email">{{contact.form.email}} <span class="required" aria-hidden="true">*</span></label>
+          <input type="email" id="cf-email" name="email" autocomplete="email" required aria-required="true">
+          <p class="form-field__error" role="alert"></p>
+        </div>
+        <div class="form-field">
+          <label for="cf-org">{{contact.form.organisation}}</label>
+          <input type="text" id="cf-org" name="organisation" autocomplete="organization">
+        </div>
+        <div class="form-field">
+          <label for="cf-type">{{contact.form.projectType}} <span class="required" aria-hidden="true">*</span></label>
+          <select id="cf-type" name="projectType" required aria-required="true">
+            {{#each contact.form.projectTypeOptions}}<option value="{{this}}">{{this}}</option>{{/each}}
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="cf-message">{{contact.form.message}} <span class="required" aria-hidden="true">*</span></label>
+          <textarea id="cf-message" name="message" required aria-required="true"></textarea>
+          <p class="form-field__error" role="alert"></p>
+        </div>
+
+        <p class="form-required-note">{{contact.form.requiredNote}}</p>
+        <button class="btn btn--primary btn--full" type="submit" data-submit-btn>{{contact.form.submit}}</button>
+
+        <div class="form-status" role="status" aria-live="polite" data-form-status></div>
+      </form>
+
+      <aside class="contact-aside">
+        <p>{{contact.form.fallbackNote}}</p>
+        <p><a href="mailto:auvexissystems@gmail.com">auvexissystems@gmail.com</a></p>
+      </aside>
+    </div>
+  </div>
+</section>

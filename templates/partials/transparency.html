@@ -1,0 +1,16 @@
+<section class="section section--tight" id="transparency">
+  <div class="container">
+    <div class="transparency reveal">
+      <p class="kicker">{{transparency.kicker}}</p>
+      <h2 class="section-title">{{transparency.title}}</h2>
+      <div class="transparency__text">
+        {{#each transparency.paragraphs}}<p>{{this}}</p>{{/each}}
+      </div>
+      <div class="status-legend">
+        {{#each transparency.statusLegend}}
+        <span class="status-badge status-badge--{{status}}">{{label}}</span>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</section>

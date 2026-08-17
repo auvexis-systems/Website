@@ -1,0 +1,19 @@
+<section class="pipeline section section--tight" id="development">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{pipeline.kicker}}</p>
+      <h2 class="section-title">{{pipeline.title}}</h2>
+      <p class="section-intro">{{pipeline.intro}}</p>
+    </div>
+
+    <div class="pipeline-list reveal">
+      {{#each pipeline.items}}
+      <div class="pipeline-item" id="{{id}}">
+        <span class="pipeline-item__title">{{title}}</span>
+        <span class="status-badge status-badge--{{status}}">{{statusLabel}}</span>
+        <span class="pipeline-item__desc">{{description}}</span>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

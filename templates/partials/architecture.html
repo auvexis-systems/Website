@@ -1,0 +1,22 @@
+<section class="architecture section" id="system">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="kicker">{{architecture.kicker}}</p>
+      <h2 class="section-title">{{architecture.title}}</h2>
+      <p class="section-intro">{{architecture.intro}}</p>
+    </div>
+
+    <div class="architecture__stages reveal">
+      {{#each architecture.stages}}
+      <div class="stage-card" id="{{id}}">
+        <p class="stage-card__label">{{label}}</p>
+        <h3 class="stage-card__title">{{title}}</h3>
+        <p class="stage-card__desc">{{description}}</p>
+        <ul class="stage-card__tags">
+          {{#each tags}}<li class="tag">{{this}}</li>{{/each}}
+        </ul>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

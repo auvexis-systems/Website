@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://auvexissystems.de/sitemap.xml

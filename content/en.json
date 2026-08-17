@@ -1,0 +1,298 @@
+{
+  "locale": "en",
+  "dir": "ltr",
+  "htmlLang": "en",
+  "meta": {
+    "siteName": "Auvexis Systems",
+    "titleHome": "Auvexis Systems — Develop. Construct. Realize.",
+    "descriptionHome": "Auvexis Systems builds AI systems, software and physical prototypes at the intersection of Intelligence, Logic and Physical. Current status: in build-up — documented transparently.",
+    "ogImage": "/assets/og-image.jpg"
+  },
+  "skipLink": "Skip to main content",
+  "header": {
+    "nav": [
+      { "label": "Solutions", "href": "#solutions" },
+      { "label": "Development", "href": "#development" },
+      { "label": "Knowledge", "href": "#knowledge" },
+      { "label": "Vision", "href": "#vision" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
+    ],
+    "cta": "Discuss a project",
+    "langSwitchLabel": "Switch language",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "hero": {
+    "kicker": "SYSTEM ARCHITECTURE & ENGINEERING",
+    "headlineLines": ["DEVELOP.", "CONSTRUCT.", "REALIZE."],
+    "subheadline": "Auvexis Systems connects intelligent software with physical construction — from the first idea to a working prototype.",
+    "ctaPrimary": { "label": "View development", "href": "#development" },
+    "ctaSecondary": { "label": "Get to know Auvexis", "href": "#about" },
+    "visualCaption": "Precision Core — brand visualization",
+    "statusNote": "Auvexis Systems is currently in build-up."
+  },
+  "architecture": {
+    "kicker": "SYSTEM PRINCIPLE",
+    "title": "Intelligence → Logic → Physical",
+    "intro": "Three layers, one continuous system: from intelligent decision-making through software implementation to physical realization.",
+    "stages": [
+      {
+        "id": "intelligence",
+        "label": "INTELLIGENCE",
+        "title": "Intelligence",
+        "description": "AI systems, agents, knowledge systems and decision support — the thinking layer of a system.",
+        "tags": ["AI Systems", "Agents", "Knowledge", "Decision Support"]
+      },
+      {
+        "id": "logic",
+        "label": "LOGIC",
+        "title": "Logic",
+        "description": "Software, automation, integration and data processing — the layer that turns intelligence into reliable processes.",
+        "tags": ["Software", "Automation", "Integration", "Data"]
+      },
+      {
+        "id": "physical",
+        "label": "PHYSICAL",
+        "title": "Physical",
+        "description": "Engineering, prototyping, hardware and embedded systems — where digital logic arrives in the real world.",
+        "tags": ["Engineering", "Prototyping", "Hardware", "Embedded Systems"]
+      }
+    ]
+  },
+  "solutions": {
+    "kicker": "SOLUTION AREAS",
+    "title": "Solutions",
+    "intro": "Auvexis Systems is building across six solution areas — each currently in active development. None of these is a market-ready product yet.",
+    "items": [
+      {
+        "id": "ai-systems-agents",
+        "icon": "brain",
+        "title": "AI Systems & Agents",
+        "status": "in-development",
+        "description": "Custom AI agents, multi-agent systems, automated workflows and specialized assistants with tool and API access.",
+        "topics": ["Custom AI agents", "Multi-agent systems", "Automated AI workflows", "Specialized assistants", "Tool & API usage by agents", "In-house company AI systems"]
+      },
+      {
+        "id": "software-ai-tools",
+        "icon": "code",
+        "title": "Software & AI Tools",
+        "status": "in-development",
+        "description": "Custom software solutions and AI-powered programs that meaningfully extend existing processes.",
+        "topics": ["Custom software solutions", "AI-powered programs", "Internal tools", "Data processing", "Automation software", "AI integration into existing processes"]
+      },
+      {
+        "id": "prompt-skill-systems",
+        "icon": "layers",
+        "title": "Prompt & Skill Systems",
+        "status": "in-development",
+        "description": "Structured prompt databases and reusable skill libraries as the foundation of modular knowledge systems.",
+        "topics": ["Structured prompt databases", "Skill libraries", "Reusable AI workflows", "Prompt templates", "Agent instructions", "Modular knowledge systems"]
+      },
+      {
+        "id": "automation",
+        "icon": "workflow",
+        "title": "Automation",
+        "status": "in-development",
+        "description": "Process automation and intelligent assistance systems that reliably handle recurring tasks.",
+        "topics": ["Process automation", "AI workflows", "Data processing", "Recurring tasks", "System integration", "Intelligent assistance systems"]
+      },
+      {
+        "id": "engineering-prototyping",
+        "icon": "wrench",
+        "title": "Engineering & Prototyping",
+        "status": "prototyping",
+        "description": "3D printing, CAD design and functional prototypes as the physical counterpart to digital development.",
+        "topics": ["3D printing", "CAD / design", "Functional prototypes", "Enclosure development", "Hardware testing", "Technical experiments"]
+      },
+      {
+        "id": "embedded-systems",
+        "icon": "cpu",
+        "title": "Embedded Systems / Hardware",
+        "status": "future",
+        "description": "The long-term connection of software and hardware — from microcontrollers to edge AI.",
+        "topics": ["Microcontrollers", "Sensing", "Hardware-software connections", "Edge AI", "Physical computing", "Proprietary hardware products"]
+      }
+    ]
+  },
+  "pipeline": {
+    "kicker": "TRANSPARENCY",
+    "title": "Development Pipeline",
+    "intro": "An honest look at what's currently being worked on — no invented metrics or progress percentages.",
+    "items": [
+      {
+        "id": "core-agent-framework",
+        "title": "Core Agent Framework",
+        "status": "in-development",
+        "description": "A modular foundation for specialized AI agents and workflows."
+      },
+      {
+        "id": "avs-beats",
+        "title": "AvS Beats",
+        "status": "in-development",
+        "description": "An experimental AI-driven music and content pipeline."
+      },
+      {
+        "id": "engineering-prototypes",
+        "title": "Engineering Prototypes",
+        "status": "prototyping",
+        "description": "Technical experiments, construction and additive manufacturing."
+      },
+      {
+        "id": "vyro-b",
+        "title": "VYRO-B",
+        "status": "future-concept",
+        "description": "A long-term research vision for an intelligent physical AI companion."
+      }
+    ]
+  },
+  "knowledge": {
+    "kicker": "KNOWLEDGE",
+    "title": "Knowledge",
+    "intro": "Technology explained in plain language — whether you're hearing about AI agents for the first time or you're deep in the field.",
+    "items": [
+      {
+        "id": "what-is-an-ai-agent",
+        "question": "What is an AI agent?",
+        "answer": "An AI agent is an AI system that doesn't just respond, but independently plans and executes steps to reach a goal — for example researching information, using tools, or working through several tasks in sequence."
+      },
+      {
+        "id": "agent-vs-chatbot",
+        "question": "What's the difference between an AI agent and a chatbot?",
+        "answer": "A chatbot primarily answers questions in a dialogue. An AI agent goes further: it can break tasks into sub-steps, use tools and interfaces, and make decisions independently within a defined scope."
+      },
+      {
+        "id": "what-is-automation",
+        "question": "What does automation mean?",
+        "answer": "Automation describes systems that carry out recurring tasks without manual intervention — from simple rule sets to complex, AI-supported processes that adapt to changing situations."
+      },
+      {
+        "id": "what-is-prompt-engineering",
+        "question": "What is prompt engineering?",
+        "answer": "Prompt engineering is the deliberate crafting of instructions for an AI system to achieve reliable, precise and repeatable results — comparable to giving a clear brief to a highly capable but very literal colleague."
+      },
+      {
+        "id": "why-combine-software-and-hardware",
+        "question": "Why combine software and hardware?",
+        "answer": "Intelligent software often only reaches its full potential once it can interact with the physical world. Combining logic with physical systems enables applications that go beyond the screen."
+      }
+    ]
+  },
+  "transparency": {
+    "kicker": "STATUS",
+    "title": "Auvexis Systems is currently in build-up.",
+    "paragraphs": [
+      "Many of the systems shown here are currently in development, prototyping, or still in the concept phase. This website deliberately documents that progress transparently — without making it look bigger than it is.",
+      "There are currently no published products, no customers, and no meaningful metrics we could show here. What does exist is a clear direction and continuous development work at the intersection of Intelligence, Logic and Physical.",
+      "This development is part of the brand's story — not something that needs to be hidden."
+    ],
+    "statusLegend": [
+      { "status": "in-development", "label": "In Development" },
+      { "status": "prototyping", "label": "Prototype" },
+      { "status": "concept", "label": "Concept" },
+      { "status": "future", "label": "Future Vision" }
+    ]
+  },
+  "vision": {
+    "kicker": "FUTURE VISION",
+    "title": "VYRO-B",
+    "subtitle": "Visual Young Robot Operator — Buddy",
+    "status": "future-concept",
+    "statusLabel": "Future Concept — not a product",
+    "paragraphs": [
+      "VYRO-B is currently not a product and not a concrete development project with a fixed timeline. It is a long-term research vision: an intelligent physical AI companion that brings Intelligence, Logic and Physical together in one system.",
+      "This vision describes a possible direction Auvexis Systems could grow into over the long term — nothing more, nothing less."
+    ]
+  },
+  "about": {
+    "kicker": "ABOUT AUVEXIS",
+    "title": "Why Auvexis Systems",
+    "paragraphs": [
+      "Auvexis Systems is built on the conviction that intelligent software doesn't have to end at the screen. We combine AI systems, software engineering and physical prototyping in one shared development approach.",
+      "We deliberately address a broad audience: from individuals and freelancers who have little time to engage deeply with AI technology, to small and medium-sized businesses who want to use automation and AI agents meaningfully — without having to fight through buzzwords."
+    ]
+  },
+  "contact": {
+    "kicker": "CONTACT",
+    "title": "Discuss a project",
+    "intro": "Tell us briefly what it's about. We'll get back to you once we've reviewed your request.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "organisation": "Organization (optional)",
+      "projectType": "Project type",
+      "projectTypeOptions": ["AI / Agent", "Software", "Automation", "Engineering", "General inquiry"],
+      "message": "Message",
+      "submit": "Send request",
+      "sending": "Sending …",
+      "requiredNote": "Fields marked with * are required.",
+      "successTitle": "Your email app is opening.",
+      "successBody": "This form isn't connected to a backend yet, so we open your email app with a pre-filled request — please send it from there.",
+      "errorTitle": "Something went wrong.",
+      "errorBody": "Please check your entries, or write to us directly by email.",
+      "fallbackNote": "The contact form isn't connected to a backend yet — until then, feel free to email us directly:",
+      "invalidEmail": "Please enter a valid email address.",
+      "requiredField": "This field is required."
+    },
+    "directEmailLabel": "Directly by email"
+  },
+  "footer": {
+    "tagline": "DEVELOP. CONSTRUCT. REALIZE.",
+    "navTitle": "Navigation",
+    "legalTitle": "Legal",
+    "legal": [
+      { "label": "Imprint", "href": "/en/imprint/" },
+      { "label": "Privacy Policy", "href": "/en/privacy/" },
+      { "label": "Cookie Settings", "href": "/en/cookie-settings/" }
+    ],
+    "langTitle": "Language",
+    "copyright": "© 2026 Auvexis Systems"
+  },
+  "statusLabels": {
+    "in-development": "In Development",
+    "prototyping": "Prototype",
+    "concept": "Concept",
+    "future": "Future Development",
+    "future-concept": "Future Concept"
+  },
+  "legal": {
+    "impressum": {
+      "title": "Imprint",
+      "metaDescription": "Imprint / legal notice for Auvexis Systems.",
+      "sections": [
+        { "heading": "Information pursuant to § 5 TMG", "body": "TODO: Insert full legal/company name, address and authorized representative." },
+        { "heading": "Contact", "body": "TODO: Insert phone number and email address." },
+        { "heading": "VAT ID", "body": "TODO: Insert VAT identification number, if applicable." },
+        { "heading": "Responsible for content pursuant to § 55 (2) RStV", "body": "TODO: Insert the person responsible, with address." },
+        { "heading": "Dispute resolution", "body": "TODO: Review and insert reference to the EU Online Dispute Resolution platform and consumer arbitration, if applicable." }
+      ],
+      "placeholderNote": "This page still contains unfinished mandatory information (TODO). Before the website goes live, these must be replaced with legally verified, accurate details."
+    },
+    "datenschutz": {
+      "title": "Privacy Policy",
+      "metaDescription": "Privacy policy for Auvexis Systems.",
+      "sections": [
+        { "heading": "Controller", "body": "TODO: Insert the data controller pursuant to Art. 4 No. 7 GDPR with full address." },
+        { "heading": "Collection and processing of personal data", "body": "TODO: Insert specific details on the contact form, server log files, cookies and any analytics/marketing tools used, including the legal basis under Art. 6 GDPR." },
+        { "heading": "Contact form", "body": "TODO: Describe which data is processed when the contact form is used and for how long it is stored." },
+        { "heading": "Hosting", "body": "TODO: Insert details of the hosting provider used and, if applicable, the data processing agreement." },
+        { "heading": "Rights of data subjects", "body": "TODO: Finalize wording on access, rectification, erasure, restriction, data portability, objection and the right to lodge a complaint with a supervisory authority." }
+      ],
+      "placeholderNote": "This privacy policy is an incomplete placeholder (TODO) and must be replaced with a legally reviewed, complete version before the website goes live."
+    },
+    "cookies": {
+      "title": "Cookie Settings",
+      "metaDescription": "Cookie settings for Auvexis Systems.",
+      "sections": [
+        { "heading": "Current status", "body": "This website currently does not use marketing or tracking cookies. Technically necessary storage functions may change as new features are added." },
+        { "heading": "Future cookie usage", "body": "TODO: Once analytics, marketing or convenience cookies are used, a full cookie consent management system with granular opt-in/opt-out controls must be added here." }
+      ],
+      "placeholderNote": "This section will be expanded once cookies beyond technically necessary functions are actually used."
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has been moved.",
+    "cta": "Back to homepage"
+  }
+}

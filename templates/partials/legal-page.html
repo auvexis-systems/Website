@@ -1,0 +1,12 @@
+<section class="legal-page">
+  <div class="container">
+    <h1>{{legalContent.title}}</h1>
+    <p class="legal-notice">{{legalContent.placeholderNote}}</p>
+    {{#each legalContent.sections}}
+    <div class="legal-section">
+      <h2>{{heading}}</h2>
+      <p>{{body}}</p>
+    </div>
+    {{/each}}
+  </div>
+</section>

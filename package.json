@@ -1,0 +1,18 @@
+{
+  "name": "auvexis-systems-website",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Auvexis Systems — marketing website. Static build (TypeScript + zero-dependency Node SSG). See README.md for the Next.js migration path.",
+  "type": "module",
+  "scripts": {
+    "build:ts": "tsc -p tsconfig.json && node build/postcompile.mjs",
+    "build:site": "node build/build.mjs",
+    "build": "npm run build:ts && npm run build:site",
+    "serve": "npx http-server dist -p 4173 -c-1",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "http-server": "^14.1.1"
+  }
+}

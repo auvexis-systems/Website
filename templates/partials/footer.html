@@ -1,0 +1,43 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <a class="brand" href="{{page.homeHref}}">
+          <img class="brand__mark" src="{{page.assetsPrefix}}assets/logo-mark.svg" alt="" width="26" height="26">
+          <span class="brand__word">
+            <span class="brand__word-main">AUVEXIS</span>
+            <span class="brand__word-sub">SYSTEMS</span>
+          </span>
+        </a>
+        <p class="footer-brand__tagline">{{footer.tagline}}</p>
+      </div>
+
+      <div class="footer-col">
+        <h3>{{footer.navTitle}}</h3>
+        <ul>
+          {{#each header.nav}}<li><a href="{{page.homeHref}}{{href}}">{{label}}</a></li>{{/each}}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>{{footer.legalTitle}}</h3>
+        <ul>
+          {{#each footer.legal}}<li><a href="{{href}}">{{label}}</a></li>{{/each}}
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3>{{footer.langTitle}}</h3>
+        <ul>
+          <li><a href="{{page.deHref}}" aria-current="{{page.isDe}}">Deutsch</a></li>
+          <li><a href="{{page.enHref}}" aria-current="{{page.isEn}}">English</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>{{footer.copyright}}</span>
+      <span>{{meta.siteName}} — auvexissystems.de</span>
+    </div>
+  </div>
+</footer>

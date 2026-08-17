@@ -1,0 +1,21 @@
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <p class="hero__status"><span class="hero__status-dot" aria-hidden="true"></span>{{hero.statusNote}}</p>
+      <p class="kicker">{{hero.kicker}}</p>
+      <h1 class="hero__headline">
+        {{#each hero.headlineLines}}<span>{{this}}</span>{{/each}}
+      </h1>
+      <p class="hero__sub">{{hero.subheadline}}</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="{{hero.ctaPrimary.href}}">{{hero.ctaPrimary.label}}</a>
+        <a class="btn btn--ghost" href="{{hero.ctaSecondary.href}}">{{hero.ctaSecondary.label}}</a>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <img class="hero__visual-core" src="{{page.assetsPrefix}}assets/precision-core.svg" alt="" width="480" height="480" loading="eager">
+      <span class="hero__visual-caption">{{hero.visualCaption}}</span>
+    </div>
+  </div>
+</section>

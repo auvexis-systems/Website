@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none" role="img" aria-label="Abstrakte Markenvisualisierung: Precision Core">
+  <defs>
+    <linearGradient id="pcSteel" x1="140" y1="60" x2="340" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/>
+      <stop offset="0.5" stop-color="#C7CEDA"/>
+      <stop offset="1" stop-color="#7C8494"/>
+    </linearGradient>
+    <radialGradient id="pcGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pcLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3B82F6" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#3B82F6" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- outer technical rings -->
+  <circle cx="240" cy="240" r="210" stroke="#253246" stroke-width="1"/>
+  <circle cx="240" cy="240" r="170" stroke="#253246" stroke-width="1" stroke-dasharray="2 6"/>
+  <circle cx="240" cy="240" r="130" stroke="#253246" stroke-width="1"/>
+
+  <!-- crosshair ticks -->
+  <g stroke="#33465F" stroke-width="1.5">
+    <line x1="240" y1="18" x2="240" y2="42"/>
+    <line x1="240" y1="438" x2="240" y2="462"/>
+    <line x1="18" y1="240" x2="42" y2="240"/>
+    <line x1="438" y1="240" x2="462" y2="240"/>
+  </g>
+
+  <!-- glow core -->
+  <circle cx="240" cy="300" r="70" fill="url(#pcGlow)"/>
+
+  <!-- controlled light line -->
+  <rect x="90" y="298" width="300" height="2" fill="url(#pcLine)"/>
+
+  <!-- precision A structure -->
+  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="url(#pcSteel)" opacity="0.96"/>
+  <path d="M240 70 L365 340 L295 340 L240 210 L185 340 L115 340 Z" fill="none" stroke="#0D1117" stroke-width="1" opacity="0.4"/>
+  <circle cx="240" cy="300" r="6" fill="#3B82F6"/>
+
+  <!-- fine construction lines -->
+  <g stroke="#253246" stroke-width="1">
+    <line x1="240" y1="70" x2="240" y2="18"/>
+    <line x1="115" y1="340" x2="70" y2="340"/>
+    <line x1="365" y1="340" x2="410" y2="340"/>
+  </g>
+</svg>

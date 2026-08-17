@@ -1,0 +1,4 @@
+node_modules/
+build/ts-out/
+.DS_Store
+*.log
