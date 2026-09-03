@@ -57,6 +57,14 @@ function initNavDropdowns(): void {
       if (item === except) return;
       item.classList.remove("is-open");
       item.querySelector<HTMLButtonElement>("[data-nav-dropdown-trigger]")?.setAttribute("aria-expanded", "false");
+      // A trigger clicked open keeps browser focus even after the mouse
+      // moves elsewhere (only Tab/click changes focus, not mouse movement),
+      // and CSS shows a dropdown independently on :focus-within too — so
+      // removing .is-open alone isn't enough to visually close this item
+      // if it still holds focus. Blur it so :focus-within clears with it.
+      if (item.contains(document.activeElement)) {
+        (document.activeElement as HTMLElement | null)?.blur();
+      }
     });
   };
 
@@ -69,6 +77,19 @@ function initNavDropdowns(): void {
       item.classList.toggle("is-open", !isOpen);
       trigger.setAttribute("aria-expanded", String(!isOpen));
     });
+  });
+
+  // A dropdown pinned open via click (.is-open) is otherwise only closed by
+  // an outside click or Escape — hovering or tabbing to a sibling trigger
+  // does NOT clear it on its own, since CSS shows each item's dropdown
+  // independently via :hover/:focus-within/.is-open. Without this, moving
+  // the mouse (or focus) from a clicked-open item to its sibling leaves
+  // both dropdowns visible at once. Closing every other item as soon as
+  // hover or focus enters a given item guarantees at most one dropdown is
+  // ever visible on desktop, regardless of mouse/keyboard/click mix.
+  items.forEach((item) => {
+    item.addEventListener("mouseenter", () => closeAll(item));
+    item.addEventListener("focusin", () => closeAll(item));
   });
 
   document.addEventListener("click", (event) => {

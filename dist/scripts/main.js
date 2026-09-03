@@ -33,11 +33,14 @@ function initNavDropdowns() {
         .filter((el) => el !== null);
     const closeAll = (except) => {
         items.forEach((item) => {
-            var _a;
+            var _a, _b;
             if (item === except)
                 return;
             item.classList.remove("is-open");
             (_a = item.querySelector("[data-nav-dropdown-trigger]")) === null || _a === void 0 ? void 0 : _a.setAttribute("aria-expanded", "false");
+            if (item.contains(document.activeElement)) {
+                (_b = document.activeElement) === null || _b === void 0 ? void 0 : _b.blur();
+            }
         });
     };
     triggers.forEach((trigger) => {
@@ -50,6 +53,10 @@ function initNavDropdowns() {
             item.classList.toggle("is-open", !isOpen);
             trigger.setAttribute("aria-expanded", String(!isOpen));
         });
+    });
+    items.forEach((item) => {
+        item.addEventListener("mouseenter", () => closeAll(item));
+        item.addEventListener("focusin", () => closeAll(item));
     });
     document.addEventListener("click", (event) => {
         const target = event.target;
