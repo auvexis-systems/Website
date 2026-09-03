@@ -61,18 +61,50 @@ const partials = {
   header: readTemplate("partials/header.html"),
   hero: readTemplate("partials/hero.html"),
   architecture: readTemplate("partials/architecture.html"),
-  solutions: readTemplate("partials/solutions.html"),
+  ecosystem: readTemplate("partials/ecosystem.html"),
+  platform: readTemplate("partials/platform.html"),
   pipeline: readTemplate("partials/pipeline.html"),
   knowledge: readTemplate("partials/knowledge.html"),
   transparency: readTemplate("partials/transparency.html"),
-  vision: readTemplate("partials/vision.html"),
+  products: readTemplate("partials/products.html"),
+  roadmap: readTemplate("partials/roadmap.html"),
   about: readTemplate("partials/about.html"),
   contact: readTemplate("partials/contact.html"),
   footer: readTemplate("partials/footer.html"),
   legalPage: readTemplate("partials/legal-page.html"),
   notFound: readTemplate("partials/not-found.html"),
+  kaHero: readTemplate("partials/ka-hero.html"),
+  kaProblemSolution: readTemplate("partials/ka-problem-solution.html"),
+  kaArchitecture: readTemplate("partials/ka-architecture.html"),
+  kaLocalFirstAgents: readTemplate("partials/ka-local-first-agents.html"),
+  kaHardware: readTemplate("partials/ka-hardware.html"),
+  kaRoadmap: readTemplate("partials/ka-roadmap.html"),
 };
 const layout = readTemplate("layout.html");
+
+// ---------------------------------------------------------------------------
+// Generic route registry — adding a future product page means adding one
+// entry here (kind: "content") plus its partials; no new hardcoded build
+// logic is needed. "home" and "legal" are the only other kinds because they
+// have genuinely different shapes (home assembles a fixed section list from
+// top-level content keys; legal pages render one shared legal-page partial
+// against content.legal[contentKey]).
+// ---------------------------------------------------------------------------
+const PAGES = [
+  { id: "home", kind: "home" },
+  {
+    id: "knowledge-accelerator",
+    kind: "content",
+    deSlug: "knowledge-accelerator",
+    enSlug: "knowledge-accelerator",
+    contentKey: "knowledgeAccelerator",
+    contentAlias: "ka",
+    partials: ["kaHero", "kaProblemSolution", "kaArchitecture", "kaLocalFirstAgents", "kaHardware", "kaRoadmap"],
+  },
+  { id: "impressum", kind: "legal", contentKey: "impressum", deSlug: "impressum", enSlug: "imprint" },
+  { id: "datenschutz", kind: "legal", contentKey: "datenschutz", deSlug: "datenschutz", enSlug: "privacy" },
+  { id: "cookies", kind: "legal", contentKey: "cookies", deSlug: "cookie-einstellungen", enSlug: "cookie-settings" },
+];
 
 function buildPageContext(content, localeKey, routePath, { title, description, ogImagePath }) {
   const page = {
@@ -98,14 +130,27 @@ function finalizePageHreflang(page) {
   page.hreflangEn = SITE_URL + page.enHref;
 }
 
+// Recursively precomputes each nav item's fully-qualified href, including
+// nested `children` (the two-level Platform/Products dropdowns). This has to
+// happen here, in JS, rather than inside the {{#each}} template loop: the
+// template engine swaps render context to the loop item for the loop body,
+// so a reference to {{page.homeHref}} inside {{#each header.nav}} (or a
+// nested {{#each children}}) can never see the outer page object — it
+// silently resolves to "" and leaves a bare "#anchor" href that only works
+// while already on the homepage. See README "Known issues fixed".
+// An href starting with "/" is already a full route (e.g. the Knowledge
+// Accelerator's dedicated page) and is used as-is, not prefixed.
+function withFullHref(items, homeHref) {
+  return items.map((item) => {
+    const fullHref = item.href.startsWith("/") ? item.href : homeHref + item.href;
+    const next = { ...item, fullHref };
+    if (item.children) next.children = withFullHref(item.children, homeHref);
+    return next;
+  });
+}
+
 function assemblePage({ content, page, mainHtml }) {
-  // Precompute each nav item's fully-qualified href (page.homeHref + href) here,
-  // in JS, rather than inside the {{#each}} template loop. The template engine
-  // swaps render context to the loop item for the loop body, so a reference to
-  // {{page.homeHref}} inside {{#each header.nav}} can never see the outer page
-  // object — it silently resolves to "" and leaves a bare "#anchor" href that
-  // only works while already on the homepage. See README "Known issues fixed".
-  const navWithFullHref = content.header.nav.map((item) => ({ ...item, fullHref: page.homeHref + item.href }));
+  const navWithFullHref = withFullHref(content.header.nav, page.homeHref);
   const ctx = { ...content, page, header: { ...content.header, nav: navWithFullHref } };
   const headerHtml = render(partials.header, ctx);
   const footerHtml = render(partials.footer, ctx);
@@ -114,16 +159,18 @@ function assemblePage({ content, page, mainHtml }) {
 }
 
 function buildHomepage(localeKey, content) {
-  const solutionsWithIcons = content.solutions.items.map((item) => ({
+  const platformWithIcons = content.platform.items.map((item) => ({
     ...withStatusLabel(item, content.statusLabels),
     iconSvg: icons[item.icon] || "",
   }));
   const pipelineWithLabels = content.pipeline.items.map((item) => withStatusLabel(item, content.statusLabels));
+  const roadmapWithLabels = content.roadmap.phases.map((phase) => withStatusLabel(phase, content.statusLabels));
 
   const homeCtx = {
     ...content,
-    solutions: { ...content.solutions, items: solutionsWithIcons },
+    platform: { ...content.platform, items: platformWithIcons },
     pipeline: { ...content.pipeline, items: pipelineWithLabels },
+    roadmap: { ...content.roadmap, phases: roadmapWithLabels },
   };
 
   const routePath = locales[localeKey].homeHref;
@@ -136,14 +183,20 @@ function buildHomepage(localeKey, content) {
   page.enHref = "/en/";
   finalizePageHreflang(page);
 
+  // Page order: Hero → system principle → platform explainer (ecosystem) →
+  // core modules (platform) → development transparency (pipeline) →
+  // knowledge Q&A → downstream products → roadmap → why-Auvexis
+  // (transparency + about) → contact CTA.
   const sections = [
     partials.hero,
     partials.architecture,
-    partials.solutions,
+    partials.ecosystem,
+    partials.platform,
     partials.pipeline,
     partials.knowledge,
+    partials.products,
+    partials.roadmap,
     partials.transparency,
-    partials.vision,
     partials.about,
     partials.contact,
   ];
@@ -152,37 +205,59 @@ function buildHomepage(localeKey, content) {
 
   const html = assemblePage({ content: homeCtx, page, mainHtml });
   writeFile(path.join(localeKey === "de" ? "." : "en", "index.html"), html);
+  return routePath;
 }
 
-const LEGAL_PAGES = [
-  { key: "impressum", contentKey: "impressum", deSlug: "impressum", enSlug: "imprint" },
-  { key: "datenschutz", contentKey: "datenschutz", deSlug: "datenschutz", enSlug: "privacy" },
-  { key: "cookies", contentKey: "cookies", deSlug: "cookie-einstellungen", enSlug: "cookie-settings" },
-];
+function buildLegalPage(pageDef, localeKey, content) {
+  const slug = localeKey === "de" ? pageDef.deSlug : pageDef.enSlug;
+  const routePath = localeKey === "de" ? `/${slug}/` : `/en/${slug}/`;
+  const legalContent = content.legal[pageDef.contentKey];
 
-function buildLegalPages(localeKey, content) {
-  for (const legal of LEGAL_PAGES) {
-    const slug = localeKey === "de" ? legal.deSlug : legal.enSlug;
-    const routePath = localeKey === "de" ? `/${slug}/` : `/en/${slug}/`;
-    const otherSlug = localeKey === "de" ? legal.enSlug : legal.deSlug;
-    const legalContent = content.legal[legal.contentKey];
+  const page = buildPageContext(content, localeKey, routePath, {
+    title: `${legalContent.title} — ${content.meta.siteName}`,
+    description: legalContent.metaDescription,
+    ogImagePath: "/og-image.png",
+  });
+  page.deHref = `/${pageDef.deSlug}/`;
+  page.enHref = `/en/${pageDef.enSlug}/`;
+  finalizePageHreflang(page);
 
-    const page = buildPageContext(content, localeKey, routePath, {
-      title: `${legalContent.title} — ${content.meta.siteName}`,
-      description: legalContent.metaDescription,
-      ogImagePath: "/og-image.png",
-    });
-    page.deHref = localeKey === "de" ? routePath : `/${legal.deSlug}/`;
-    page.enHref = localeKey === "en" ? routePath : `/en/${legal.enSlug}/`;
-    finalizePageHreflang(page);
+  const ctx = { ...content, page, legalContent };
+  const mainHtml = render(partials.legalPage, ctx);
+  const html = assemblePage({ content, page, mainHtml });
 
-    const ctx = { ...content, page, legalContent };
-    const mainHtml = render(partials.legalPage, ctx);
-    const html = assemblePage({ content, page, mainHtml });
+  const outDir = localeKey === "de" ? slug : path.join("en", slug);
+  writeFile(path.join(outDir, "index.html"), html);
+  return routePath;
+}
 
-    const outDir = localeKey === "de" ? slug : path.join("en", slug);
-    writeFile(path.join(outDir, "index.html"), html);
-  }
+// Generic builder for any future "content" page (a dedicated product page
+// like the Knowledge Accelerator): a locale-aware route, its own meta title/
+// description from content[contentKey].meta, and an ordered list of partials
+// rendered against a context exposing that content under `contentAlias`.
+// Adding a new product page later needs one new PAGES entry and its
+// partials/content — no changes to this function.
+function buildContentPage(pageDef, localeKey, content) {
+  const slug = localeKey === "de" ? pageDef.deSlug : pageDef.enSlug;
+  const routePath = localeKey === "de" ? `/${slug}/` : `/en/${slug}/`;
+  const pageContent = content[pageDef.contentKey];
+
+  const page = buildPageContext(content, localeKey, routePath, {
+    title: pageContent.meta.title,
+    description: pageContent.meta.description,
+    ogImagePath: "/og-image.png",
+  });
+  page.deHref = `/${pageDef.deSlug}/`;
+  page.enHref = `/en/${pageDef.enSlug}/`;
+  finalizePageHreflang(page);
+
+  const ctx = { ...content, page, [pageDef.contentAlias || pageDef.contentKey]: pageContent };
+  const mainHtml = pageDef.partials.map((key) => render(partials[key], ctx)).join("\n");
+  const html = assemblePage({ content, page, mainHtml });
+
+  const outDir = localeKey === "de" ? slug : path.join("en", slug);
+  writeFile(path.join(outDir, "index.html"), html);
+  return routePath;
 }
 
 function build404(content) {
@@ -200,9 +275,10 @@ function build404(content) {
   writeFile("404.html", html);
 }
 
-function buildSitemap() {
-  const urls = ["/", "/impressum/", "/datenschutz/", "/cookie-einstellungen/", "/en/", "/en/imprint/", "/en/privacy/", "/en/cookie-settings/"];
-  const body = urls
+// Generated from the routes actually built during this run (see main()),
+// not a hand-maintained list — a new PAGES entry automatically appears here.
+function buildSitemap(routes) {
+  const body = routes
     .map((u) => `  <url>\n    <loc>${SITE_URL}${u}</loc>\n  </url>`)
     .join("\n");
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
@@ -231,16 +307,26 @@ function copyAssets() {
 
 function main() {
   mkdirSync(DIST, { recursive: true });
+  const builtRoutes = [];
 
   for (const localeKey of Object.keys(locales)) {
     const content = readJson(locales[localeKey].contentFile);
-    buildHomepage(localeKey, content);
-    buildLegalPages(localeKey, content);
+    for (const pageDef of PAGES) {
+      if (pageDef.kind === "home") {
+        builtRoutes.push(buildHomepage(localeKey, content));
+      } else if (pageDef.kind === "legal") {
+        builtRoutes.push(buildLegalPage(pageDef, localeKey, content));
+      } else if (pageDef.kind === "content") {
+        builtRoutes.push(buildContentPage(pageDef, localeKey, content));
+      } else {
+        throw new Error(`Unknown page kind "${pageDef.kind}" for page "${pageDef.id}"`);
+      }
+    }
   }
 
   const deContent = readJson(locales.de.contentFile);
   build404(deContent);
-  buildSitemap();
+  buildSitemap(builtRoutes);
   buildRobots();
   copyAssets();
 

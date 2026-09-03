@@ -51,17 +51,63 @@
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <ul class="main-nav__list">
         
-        <li><a class="main-nav__link" href="/#solutions">Solutions</a></li>
         
-        <li><a class="main-nav__link" href="/#development">Development</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="/">Home</a></li>
         
-        <li><a class="main-nav__link" href="/#knowledge">Knowledge</a></li>
         
-        <li><a class="main-nav__link" href="/#vision">Vision</a></li>
         
-        <li><a class="main-nav__link" href="/#about">About</a></li>
+        <li class="main-nav__item main-nav__item--dropdown">
+          <button type="button" class="main-nav__trigger" data-nav-dropdown-trigger aria-expanded="false">
+            <span>Platform</span>
+            <svg class="main-nav__caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="main-nav__dropdown" data-nav-dropdown>
+            
+            <li><a class="main-nav__dropdown-link" href="/#ayvie">AYVIE</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#ai-workers">AI Workers</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#dashboard-control-layer">Dashboard / Control Layer</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#knowledge-infrastructure">Knowledge Infrastructure</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#automation">Automation</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#hardware">Hardware</a></li>
+            
+          </ul>
+        </li>
         
-        <li><a class="main-nav__link" href="/#contact">Contact</a></li>
+        
+        
+        <li class="main-nav__item main-nav__item--dropdown">
+          <button type="button" class="main-nav__trigger" data-nav-dropdown-trigger aria-expanded="false">
+            <span>Products</span>
+            <svg class="main-nav__caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="main-nav__dropdown" data-nav-dropdown>
+            
+            <li><a class="main-nav__dropdown-link" href="/knowledge-accelerator/">Auvexis Knowledge Accelerator</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#vyro-robotics">VYRO / Robotics</a></li>
+            
+            <li><a class="main-nav__dropdown-link" href="/#avs-beats">Auvexis Studio / AvS Beats</a></li>
+            
+          </ul>
+        </li>
+        
+        
+        
+        <li class="main-nav__item"><a class="main-nav__link" href="/#roadmap">Roadmap</a></li>
+        
+        
+        
+        <li class="main-nav__item"><a class="main-nav__link" href="/#about">About</a></li>
+        
+        
+        
+        <li class="main-nav__item"><a class="main-nav__link" href="/#contact">Contact</a></li>
+        
         
       </ul>
       <a class="btn btn--primary header-cta" href="/#contact">Projekt besprechen</a>
@@ -142,97 +188,128 @@
   </div>
 </section>
 
-<section class="solutions section" id="solutions">
+<section class="ecosystem section" id="ecosystem">
   <div class="container">
-    <div class="section-head reveal">
-      <p class="kicker">LEISTUNGSFELDER</p>
-      <h2 class="section-title">Solutions</h2>
-      <p class="section-intro">Auvexis Systems baut an sechs Leistungsfeldern — jedes davon aktuell in aktiver Entwicklung. Kein Feld ist bereits ein marktreifes Produkt.</p>
+    <div class="section-head section-head--center reveal">
+      <p class="kicker">ARCHITEKTUR</p>
+      <h2 class="section-title">Wie die Auvexis Plattform zusammenspielt</h2>
+      <p class="section-intro">Wissen aus Repositories und Dokumenten fließt durch den Auvexis Knowledge Accelerator zu AYVIE als zentraler Orchestrierungsebene, die es an AI Workers und Agent-Workflows wie Codex oder Claude Code weiterleitet — gesteuert und sichtbar gemacht über den Dashboard / Control Layer.</p>
     </div>
 
-    <div class="solutions-grid">
+    <div class="ecosystem-diagram reveal">
+      <div class="ecosystem-diagram__frame">
+        <img class="ecosystem-diagram__image" src="/assets/ecosystem-architecture.png" alt="Systemdiagramm: Wissensquellen fließen über den Knowledge Accelerator zu AI Workers und dem Dashboard / Control Layer, flankiert von Hardware-Knoten." width="1024" height="572" loading="lazy">
+        <div class="ecosystem-diagram__labels">
+          <span class="ecosystem-label" style="--x:50%;--y:8%">Dashboard / Control Layer</span>
+          <span class="ecosystem-label" style="--x:50%;--y:31%">AI Workers</span>
+          <span class="ecosystem-label" style="--x:50%;--y:51%">Knowledge Accelerator</span>
+          <span class="ecosystem-label" style="--x:50%;--y:74%">Knowledge Sources</span>
+          <span class="ecosystem-label" style="--x:10%;--y:41%">Hardware Nodes</span>
+          <span class="ecosystem-label ecosystem-label--duplicate" style="--x:90%;--y:41%" aria-hidden="true">Hardware Nodes</span>
+        </div>
+      </div>
+      <p class="ecosystem-diagram__note">Visualisierung des aktuellen Architekturkonzepts — kein Abbild einer bereits vollständig implementierten Infrastruktur.</p>
+    </div>
+  </div>
+</section>
+
+<section class="platform section" id="platform">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">PLATTFORM</p>
+      <h2 class="section-title">Platform</h2>
+      <p class="section-intro">Auvexis Systems ist eine Plattform aus sechs zusammenhängenden Bereichen. AYVIE bildet als zentrale interne Operatorin und Orchestrierungsebene den Ausgangspunkt, von dem aus AI Workers, der Dashboard / Control Layer, die Knowledge Infrastructure und die weiteren Bereiche koordiniert werden. Jeder Bereich befindet sich aktuell in aktiver Entwicklung, im Konzept oder in der Vorbereitung.</p>
+    </div>
+
+    <div class="platform-grid">
       
-      <article class="solution-card reveal" id="ai-systems-agents">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><circle cx="6" cy="7" r="2.4"/><circle cx="18" cy="7" r="2.4"/><circle cx="12" cy="12" r="2.6"/><circle cx="7" cy="17" r="2.2"/><circle cx="17" cy="17" r="2.2"/><path d="M8.1 8.5 10 10.5M15.9 8.5 14 10.5M10 14 8.5 15.4M14 14l1.5 1.4"/></svg></span>
+      <article class="platform-card platform-card--featured reveal" id="ayvie">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"/><circle cx="18.5" cy="18.5" r="1.6"/></svg></span>
+          <span class="status-badge status-badge--concept">Konzept</span>
+        </div>
+        <div>
+          <p class="platform-card__eyebrow">Interne Operatorin / Orchestrierungsebene</p>
+          <h3 class="platform-card__title">AYVIE</h3>
+          <p class="platform-card__desc">AYVIE ist die zentrale interne Operatorin von Auvexis Systems. Sie verbindet Wissen, Steuerung und spezialisierte AI Worker und dient als operative Schnittstelle zwischen dem Nutzer und dem Auvexis-Ökosystem.</p>
+        </div>
+        <ul class="platform-card__topics">
+          <li>Koordiniert und überwacht AI Workers</li><li>Operative Schnittstelle zum Dashboard / Control Layer</li><li>Zugriff auf die Knowledge Infrastructure</li><li>Orchestriert Workflows über die gesamte Plattform</li>
+        </ul>
+      </article>
+      
+      <article class="platform-card reveal" id="ai-workers">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="5.5" y="8.5" width="13" height="9.5" rx="2.2"/><circle cx="9.5" cy="13" r="1.1"/><circle cx="14.5" cy="13" r="1.1"/><path d="M12 8.5V5.3M9.2 5.3h5.6"/><path d="M3.2 12h2.3M18.5 12h2.3"/></svg></span>
           <span class="status-badge status-badge--in-development">In Entwicklung</span>
         </div>
         <div>
-          <h3 class="solution-card__title">AI Systems &amp; Agents</h3>
-          <p class="solution-card__desc">Individuelle KI-Agenten, Multi-Agent-Systeme, automatisierte Workflows und spezialisierte Assistenten mit Tool- und API-Zugriff.</p>
+          
+          <h3 class="platform-card__title">AI Workers</h3>
+          <p class="platform-card__desc">Individuelle KI-Agenten, Multi-Agent-Systeme und automatisierte Workflows mit Tool- und API-Zugriff — spezialisierte Ausführungseinheiten, die von AYVIE koordiniert und orchestriert werden.</p>
         </div>
-        <ul class="solution-card__topics">
+        <ul class="platform-card__topics">
           <li>Individuelle KI-Agenten</li><li>Multi-Agent-Systeme</li><li>Automatisierte AI-Workflows</li><li>Spezialisierte Assistenten</li><li>Tool- &amp; API-Nutzung durch Agenten</li><li>Unternehmensinterne KI-Systeme</li>
         </ul>
       </article>
       
-      <article class="solution-card reveal" id="software-ai-tools">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M9 6 3.5 12 9 18M15 6l5.5 6L15 18"/></svg></span>
-          <span class="status-badge status-badge--in-development">In Entwicklung</span>
+      <article class="platform-card reveal" id="dashboard-control-layer">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M4.5 16a7.5 7.5 0 1 1 15 0"/><path d="M12 16l3.6-4.6"/><circle cx="12" cy="16" r="1.2"/><path d="M4.5 16h-1.3M20.8 16h-1.3"/></svg></span>
+          <span class="status-badge status-badge--concept">Konzept</span>
         </div>
         <div>
-          <h3 class="solution-card__title">Software &amp; AI Tools</h3>
-          <p class="solution-card__desc">Individuelle Softwarelösungen und KI-gestützte Programme, die bestehende Prozesse sinnvoll erweitern.</p>
+          
+          <h3 class="platform-card__title">Dashboard / Control Layer</h3>
+          <p class="platform-card__desc">Eine zentrale Steuerungs- und Monitoring-Ebene, über die AYVIE, AI Workers, der Knowledge Accelerator und Hardware-Ressourcen sichtbar und steuerbar werden.</p>
         </div>
-        <ul class="solution-card__topics">
-          <li>Individuelle Softwarelösungen</li><li>KI-gestützte Programme</li><li>Interne Tools</li><li>Datenverarbeitung</li><li>Automatisierungssoftware</li><li>AI-Integration in bestehende Prozesse</li>
+        <ul class="platform-card__topics">
+          <li>Zentrale Übersicht</li><li>Statusüberwachung</li><li>Steuerung von Workflows</li><li>Anbindung an alle Plattformbereiche</li>
         </ul>
       </article>
       
-      <article class="solution-card reveal" id="prompt-skill-systems">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M12 3 21 8l-9 5-9-5 9-5Z"/><path d="M3 12l9 5 9-5"/><path d="M3 16l9 5 9-5"/></svg></span>
+      <article class="platform-card reveal" id="knowledge-infrastructure">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><ellipse cx="12" cy="6" rx="7" ry="2.6"/><path d="M5 6v6c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6V6"/><path d="M5 12v6c0 1.4 3.1 2.6 7 2.6s7-1.2 7-2.6v-6"/></svg></span>
           <span class="status-badge status-badge--in-development">In Entwicklung</span>
         </div>
         <div>
-          <h3 class="solution-card__title">Prompt &amp; Skill Systems</h3>
-          <p class="solution-card__desc">Strukturierte Prompt-Datenbanken und wiederverwendbare Skill-Bibliotheken als Grundlage modularer Wissenssysteme.</p>
+          
+          <h3 class="platform-card__title">Knowledge Infrastructure</h3>
+          <p class="platform-card__desc">Strukturierte Prompt- und Skill-Bibliotheken sowie die zugrunde liegende Wissensbasis, auf die AI Workers zugreifen — Grundlage für den Auvexis Knowledge Accelerator.</p>
         </div>
-        <ul class="solution-card__topics">
-          <li>Strukturierte Prompt-Datenbanken</li><li>Skill-Bibliotheken</li><li>Wiederverwendbare AI-Workflows</li><li>Prompt Templates</li><li>Agent Instructions</li><li>Modulare Wissenssysteme</li>
+        <ul class="platform-card__topics">
+          <li>Strukturierte Prompt-Datenbanken</li><li>Skill-Bibliotheken</li><li>Wiederverwendbare AI-Workflows</li><li>Modulare Wissenssysteme</li><li>Grundlage für Context Optimization</li>
         </ul>
       </article>
       
-      <article class="solution-card reveal" id="automation">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></span>
+      <article class="platform-card reveal" id="automation">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="3" y="4" width="6" height="5" rx="1"/><rect x="15" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M6 9v3h12V9M12 12v3"/></svg></span>
           <span class="status-badge status-badge--in-development">In Entwicklung</span>
         </div>
         <div>
-          <h3 class="solution-card__title">Automation</h3>
-          <p class="solution-card__desc">Prozessautomatisierung und intelligente Assistenzsysteme, die wiederkehrende Aufgaben zuverlässig übernehmen.</p>
+          
+          <h3 class="platform-card__title">Automation</h3>
+          <p class="platform-card__desc">Prozessautomatisierung und intelligente Assistenzsysteme, die wiederkehrende Aufgaben zuverlässig übernehmen.</p>
         </div>
-        <ul class="solution-card__topics">
+        <ul class="platform-card__topics">
           <li>Prozessautomatisierung</li><li>AI-Workflows</li><li>Datenverarbeitung</li><li>Wiederkehrende Aufgaben</li><li>Systemintegration</li><li>Intelligente Assistenzsysteme</li>
         </ul>
       </article>
       
-      <article class="solution-card reveal" id="engineering-prototyping">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.1L4 16.7 7.3 20l5.3-5.3a4 4 0 0 0 5.1-5.4l-3 3-2.4-2.4 3-3Z"/></svg></span>
-          <span class="status-badge status-badge--prototyping">Prototyp</span>
-        </div>
-        <div>
-          <h3 class="solution-card__title">Engineering &amp; Prototyping</h3>
-          <p class="solution-card__desc">3D-Druck, CAD-Konstruktion und Funktionsprototypen als physisches Gegenstück zur digitalen Entwicklung.</p>
-        </div>
-        <ul class="solution-card__topics">
-          <li>3D-Druck</li><li>CAD / Konstruktion</li><li>Funktionsprototypen</li><li>Gehäuseentwicklung</li><li>Hardwaretests</li><li>Technische Experimente</li>
-        </ul>
-      </article>
-      
-      <article class="solution-card reveal" id="embedded-systems">
-        <div class="solution-card__top">
-          <span class="solution-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="7" y="7" width="10" height="10" rx="1.4"/><rect x="10" y="10" width="4" height="4" rx="0.6"/><path d="M9 3v2M12 3v2M15 3v2M9 19v2M12 19v2M15 19v2M3 9h2M3 12h2M3 15h2M19 9h2M19 12h2M19 15h2"/></svg></span>
+      <article class="platform-card reveal" id="hardware">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"><rect x="7" y="7" width="10" height="10" rx="1.4"/><rect x="10" y="10" width="4" height="4" rx="0.6"/><path d="M9 3v2M12 3v2M15 3v2M9 19v2M12 19v2M15 19v2M3 9h2M3 12h2M3 15h2M19 9h2M19 12h2M19 15h2"/></svg></span>
           <span class="status-badge status-badge--future">Future Development</span>
         </div>
         <div>
-          <h3 class="solution-card__title">Embedded Systems / Hardware</h3>
-          <p class="solution-card__desc">Langfristige Verbindung von Software und Hardware — von Mikrocontrollern bis Edge AI.</p>
+          
+          <h3 class="platform-card__title">Hardware</h3>
+          <p class="platform-card__desc">Die langfristige Verbindung von Software und Hardware — von Mikrocontrollern über Edge AI bis zu geplanter FPGA-basierter Beschleunigung einzelner Workloads.</p>
         </div>
-        <ul class="solution-card__topics">
-          <li>Mikrocontroller</li><li>Sensorik</li><li>Hardware-Software-Verbindungen</li><li>Edge AI</li><li>Physical Computing</li><li>Eigene Hardwareprodukte</li>
+        <ul class="platform-card__topics">
+          <li>Mikrocontroller</li><li>Sensorik</li><li>Edge AI</li><li>Hardware-Software-Verbindungen</li><li>FPGA-Beschleunigung geplant</li><li>Physical Computing</li>
         </ul>
       </article>
       
@@ -332,6 +409,141 @@
   </div>
 </section>
 
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">PRODUKTE</p>
+      <h2 class="section-title">Products</h2>
+      <p class="section-intro">Drei Produktbereiche, die auf der Auvexis Plattform aufbauen — vom aktuell im Aufbau befindlichen Knowledge Accelerator bis zu langfristigen Zukunftsvisionen.</p>
+    </div>
+
+    <div class="products-grid reveal">
+      
+      <article class="product-card" id="knowledge-accelerator">
+        <div class="product-card__head">
+          <span class="status-badge status-badge--concept">Konzept — aktiv in Entwicklung</span>
+        </div>
+        <h3 class="product-card__title">Auvexis Knowledge Accelerator</h3>
+        
+        <p class="product-card__desc">Lokal-first Software, die lokale Daten indiziert, hasht, durchsucht, vergleicht und dedupliziert, bevor sie an AI-Agenten wie Codex, Claude Code, Claude Cowork oder AYVIE übergeben werden — als Vorverarbeitung, die redundante Kontextverarbeitung reduzieren soll.</p>
+        <a class="btn btn--ghost btn--sm product-card__cta" href="/knowledge-accelerator/">Knowledge Accelerator ansehen</a>
+      </article>
+      
+      <article class="product-card" id="vyro-robotics">
+        <div class="product-card__head">
+          <span class="status-badge status-badge--future-concept">Future Concept — kein Produkt</span>
+        </div>
+        <h3 class="product-card__title">VYRO / Robotics</h3>
+        <p class="product-card__subtitle">VYRO-B — Visual Young Robot Operator, Buddy</p>
+        <p class="product-card__desc">VYRO-B ist aktuell kein Produkt und auch kein konkretes Entwicklungsprojekt mit festem Zeitplan. Es handelt sich um eine langfristige Forschungsvision: einen intelligenten physischen KI-Begleiter, der Intelligence, Logic und Physical in einem System zusammenführt.</p>
+        
+      </article>
+      
+      <article class="product-card" id="avs-beats">
+        <div class="product-card__head">
+          <span class="status-badge status-badge--in-development">In Entwicklung</span>
+        </div>
+        <h3 class="product-card__title">Auvexis Studio / AvS Beats</h3>
+        
+        <p class="product-card__desc">Auvexis Studio ist der kreative Bereich von Auvexis Systems. AvS Beats ist die dort entstehende, experimentelle KI-gestützte Musik- und Content-Pipeline.</p>
+        
+      </article>
+      
+    </div>
+  </div>
+</section>
+
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">ROADMAP</p>
+      <h2 class="section-title">Roadmap</h2>
+      <p class="section-intro">Sieben Phasen, die den Weg von den Kernsystemen bis zur geplanten Hardware-Beschleunigung beschreiben — ohne feste Termine, aber mit klarer Reihenfolge.</p>
+    </div>
+
+    <ol class="roadmap-timeline reveal">
+      
+      <li class="roadmap-phase" id="core-systems">
+        <span class="roadmap-phase__number">01</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">Core Systems</h3>
+            <span class="status-badge status-badge--in-development">In Entwicklung</span>
+          </div>
+          <p class="roadmap-phase__desc">Grundlegende Plattform-Infrastruktur: AYVIE als zentrale Orchestrierungsebene sowie AI Workers und der Dashboard / Control Layer.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="knowledge-accelerator-mvp">
+        <span class="roadmap-phase__number">02</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">Knowledge Accelerator MVP</h3>
+            <span class="status-badge status-badge--concept">Konzept</span>
+          </div>
+          <p class="roadmap-phase__desc">Erste funktionsfähige Version des lokal-first Knowledge Accelerators: Indexierung, Hashing und Suche.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="context-builder">
+        <span class="roadmap-phase__number">03</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">Context Builder</h3>
+            <span class="status-badge status-badge--concept">Konzept</span>
+          </div>
+          <p class="roadmap-phase__desc">Aufbereitung gefilterter, deduplizierter Inhalte zu strukturiertem Kontext für AI-Agenten.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="ai-agent-integration">
+        <span class="roadmap-phase__number">04</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">AI Agent Integration</h3>
+            <span class="status-badge status-badge--concept">Konzept</span>
+          </div>
+          <p class="roadmap-phase__desc">Anbindung an Codex, Claude Code, Claude Cowork, AYVIE und weitere Worker.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="benchmarking">
+        <span class="roadmap-phase__number">05</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">Benchmarking</h3>
+            <span class="status-badge status-badge--future">Future Development</span>
+          </div>
+          <p class="roadmap-phase__desc">Transparente, nachvollziehbare Messung der tatsächlichen Effekte — Ergebnisse werden erst nach Abschluss veröffentlicht.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="fpga-analysis">
+        <span class="roadmap-phase__number">06</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">FPGA Analysis</h3>
+            <span class="status-badge status-badge--future">Future Development</span>
+          </div>
+          <p class="roadmap-phase__desc">Analyse, welche Workloads — Hashing, Pattern Matching, Vergleich, Filterung — für FPGA-Beschleunigung geeignet sind.</p>
+        </div>
+      </li>
+      
+      <li class="roadmap-phase" id="hardware-prototype">
+        <span class="roadmap-phase__number">07</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">Hardware Prototype</h3>
+            <span class="status-badge status-badge--future-concept">Future Concept</span>
+          </div>
+          <p class="roadmap-phase__desc">Langfristige Vision eines dedizierten Hardware-Beschleunigers für den Knowledge Accelerator.</p>
+        </div>
+      </li>
+      
+    </ol>
+  </div>
+</section>
+
 <section class="section section--tight" id="transparency">
   <div class="container">
     <div class="transparency reveal">
@@ -350,22 +562,6 @@
         
         <span class="status-badge status-badge--future">Future Vision</span>
         
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="vision">
-  <div class="container">
-    <div class="vision-panel reveal">
-      <div class="vision-panel__head">
-        <p class="kicker" style="margin-bottom:0">ZUKUNFTSVISION</p>
-        <span class="status-badge status-badge--future-concept">Future Concept — kein Produkt</span>
-      </div>
-      <h2 class="vision-panel__title">VYRO-B</h2>
-      <p class="vision-panel__subtitle">Visual Young Robot Operator — Buddy</p>
-      <div class="vision-panel__text">
-        <p>VYRO-B ist aktuell kein Produkt und auch kein konkretes Entwicklungsprojekt mit festem Zeitplan. Es handelt sich um eine langfristige Forschungsvision: einen intelligenten physischen KI-Begleiter, der Intelligence, Logic und Physical in einem System zusammenführt.</p><p>Diese Vision beschreibt eine mögliche Richtung, in die sich Auvexis Systems langfristig entwickeln könnte — nicht mehr und nicht weniger.</p>
       </div>
     </div>
   </div>
@@ -454,7 +650,7 @@
       <div class="footer-col">
         <h3>Navigation</h3>
         <ul>
-          <li><a href="/#solutions">Solutions</a></li><li><a href="/#development">Development</a></li><li><a href="/#knowledge">Knowledge</a></li><li><a href="/#vision">Vision</a></li><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li>
+          <li><a href="/">Home</a></li><li><a href="/#platform">Platform</a></li><li><a href="/#products">Products</a></li><li><a href="/#roadmap">Roadmap</a></li><li><a href="/#about">About</a></li><li><a href="/#contact">Contact</a></li>
         </ul>
       </div>
 

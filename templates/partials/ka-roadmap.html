@@ -1,0 +1,22 @@
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="ka-roadmap-note reveal">
+      <p class="kicker">{{ka.roadmapNote.kicker}}</p>
+      <h2 class="section-title">{{ka.roadmapNote.title}}</h2>
+      <p class="section-intro">{{ka.roadmapNote.description}}</p>
+      <a class="btn btn--ghost" href="{{ka.roadmapNote.cta.href}}">{{ka.roadmapNote.cta.label}}</a>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="benchmark">
+  <div class="container">
+    <div class="ka-benchmark reveal">
+      <p class="kicker">{{ka.benchmark.kicker}}</p>
+      <h2 class="section-title">{{ka.benchmark.title}}</h2>
+      <div class="ka-text-block">
+        {{#each ka.benchmark.paragraphs}}<p>{{this}}</p>{{/each}}
+      </div>
+    </div>
+  </div>
+</section>

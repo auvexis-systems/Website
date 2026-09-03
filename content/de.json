@@ -11,30 +11,31 @@
   "skipLink": "Zum Hauptinhalt springen",
   "header": {
     "nav": [
+      { "label": "Home", "href": "" },
       {
-        "label": "Solutions",
-        "href": "#solutions"
+        "label": "Platform",
+        "href": "#platform",
+        "children": [
+          { "label": "AYVIE", "href": "#ayvie" },
+          { "label": "AI Workers", "href": "#ai-workers" },
+          { "label": "Dashboard / Control Layer", "href": "#dashboard-control-layer" },
+          { "label": "Knowledge Infrastructure", "href": "#knowledge-infrastructure" },
+          { "label": "Automation", "href": "#automation" },
+          { "label": "Hardware", "href": "#hardware" }
+        ]
       },
       {
-        "label": "Development",
-        "href": "#development"
+        "label": "Products",
+        "href": "#products",
+        "children": [
+          { "label": "Auvexis Knowledge Accelerator", "href": "/knowledge-accelerator/" },
+          { "label": "VYRO / Robotics", "href": "#vyro-robotics" },
+          { "label": "Auvexis Studio / AvS Beats", "href": "#avs-beats" }
+        ]
       },
-      {
-        "label": "Knowledge",
-        "href": "#knowledge"
-      },
-      {
-        "label": "Vision",
-        "href": "#vision"
-      },
-      {
-        "label": "About",
-        "href": "#about"
-      },
-      {
-        "label": "Contact",
-        "href": "#contact"
-      }
+      { "label": "Roadmap", "href": "#roadmap" },
+      { "label": "About", "href": "#about" },
+      { "label": "Contact", "href": "#contact" }
     ],
     "cta": "Projekt besprechen",
     "langSwitchLabel": "Sprache wechseln",
@@ -103,17 +104,32 @@
       }
     ]
   },
-  "solutions": {
-    "kicker": "LEISTUNGSFELDER",
-    "title": "Solutions",
-    "intro": "Auvexis Systems baut an sechs Leistungsfeldern — jedes davon aktuell in aktiver Entwicklung. Kein Feld ist bereits ein marktreifes Produkt.",
+  "platform": {
+    "kicker": "PLATTFORM",
+    "title": "Platform",
+    "intro": "Auvexis Systems ist eine Plattform aus sechs zusammenhängenden Bereichen. AYVIE bildet als zentrale interne Operatorin und Orchestrierungsebene den Ausgangspunkt, von dem aus AI Workers, der Dashboard / Control Layer, die Knowledge Infrastructure und die weiteren Bereiche koordiniert werden. Jeder Bereich befindet sich aktuell in aktiver Entwicklung, im Konzept oder in der Vorbereitung.",
     "items": [
       {
-        "id": "ai-systems-agents",
-        "icon": "brain",
-        "title": "AI Systems & Agents",
+        "id": "ayvie",
+        "icon": "spark",
+        "title": "AYVIE",
+        "status": "concept",
+        "featured": true,
+        "eyebrow": "Interne Operatorin / Orchestrierungsebene",
+        "description": "AYVIE ist die zentrale interne Operatorin von Auvexis Systems. Sie verbindet Wissen, Steuerung und spezialisierte AI Worker und dient als operative Schnittstelle zwischen dem Nutzer und dem Auvexis-Ökosystem.",
+        "topics": [
+          "Koordiniert und überwacht AI Workers",
+          "Operative Schnittstelle zum Dashboard / Control Layer",
+          "Zugriff auf die Knowledge Infrastructure",
+          "Orchestriert Workflows über die gesamte Plattform"
+        ]
+      },
+      {
+        "id": "ai-workers",
+        "icon": "bot",
+        "title": "AI Workers",
         "status": "in-development",
-        "description": "Individuelle KI-Agenten, Multi-Agent-Systeme, automatisierte Workflows und spezialisierte Assistenten mit Tool- und API-Zugriff.",
+        "description": "Individuelle KI-Agenten, Multi-Agent-Systeme und automatisierte Workflows mit Tool- und API-Zugriff — spezialisierte Ausführungseinheiten, die von AYVIE koordiniert und orchestriert werden.",
         "topics": [
           "Individuelle KI-Agenten",
           "Multi-Agent-Systeme",
@@ -124,33 +140,30 @@
         ]
       },
       {
-        "id": "software-ai-tools",
-        "icon": "code",
-        "title": "Software & AI Tools",
-        "status": "in-development",
-        "description": "Individuelle Softwarelösungen und KI-gestützte Programme, die bestehende Prozesse sinnvoll erweitern.",
+        "id": "dashboard-control-layer",
+        "icon": "gauge",
+        "title": "Dashboard / Control Layer",
+        "status": "concept",
+        "description": "Eine zentrale Steuerungs- und Monitoring-Ebene, über die AYVIE, AI Workers, der Knowledge Accelerator und Hardware-Ressourcen sichtbar und steuerbar werden.",
         "topics": [
-          "Individuelle Softwarelösungen",
-          "KI-gestützte Programme",
-          "Interne Tools",
-          "Datenverarbeitung",
-          "Automatisierungssoftware",
-          "AI-Integration in bestehende Prozesse"
+          "Zentrale Übersicht",
+          "Statusüberwachung",
+          "Steuerung von Workflows",
+          "Anbindung an alle Plattformbereiche"
         ]
       },
       {
-        "id": "prompt-skill-systems",
-        "icon": "layers",
-        "title": "Prompt & Skill Systems",
+        "id": "knowledge-infrastructure",
+        "icon": "database",
+        "title": "Knowledge Infrastructure",
         "status": "in-development",
-        "description": "Strukturierte Prompt-Datenbanken und wiederverwendbare Skill-Bibliotheken als Grundlage modularer Wissenssysteme.",
+        "description": "Strukturierte Prompt- und Skill-Bibliotheken sowie die zugrunde liegende Wissensbasis, auf die AI Workers zugreifen — Grundlage für den Auvexis Knowledge Accelerator.",
         "topics": [
           "Strukturierte Prompt-Datenbanken",
           "Skill-Bibliotheken",
           "Wiederverwendbare AI-Workflows",
-          "Prompt Templates",
-          "Agent Instructions",
-          "Modulare Wissenssysteme"
+          "Modulare Wissenssysteme",
+          "Grundlage für Context Optimization"
         ]
       },
       {
@@ -169,33 +182,18 @@
         ]
       },
       {
-        "id": "engineering-prototyping",
-        "icon": "wrench",
-        "title": "Engineering & Prototyping",
-        "status": "prototyping",
-        "description": "3D-Druck, CAD-Konstruktion und Funktionsprototypen als physisches Gegenstück zur digitalen Entwicklung.",
-        "topics": [
-          "3D-Druck",
-          "CAD / Konstruktion",
-          "Funktionsprototypen",
-          "Gehäuseentwicklung",
-          "Hardwaretests",
-          "Technische Experimente"
-        ]
-      },
-      {
-        "id": "embedded-systems",
+        "id": "hardware",
         "icon": "cpu",
-        "title": "Embedded Systems / Hardware",
+        "title": "Hardware",
         "status": "future",
-        "description": "Langfristige Verbindung von Software und Hardware — von Mikrocontrollern bis Edge AI.",
+        "description": "Die langfristige Verbindung von Software und Hardware — von Mikrocontrollern über Edge AI bis zu geplanter FPGA-basierter Beschleunigung einzelner Workloads.",
         "topics": [
           "Mikrocontroller",
           "Sensorik",
-          "Hardware-Software-Verbindungen",
           "Edge AI",
-          "Physical Computing",
-          "Eigene Hardwareprodukte"
+          "Hardware-Software-Verbindungen",
+          "FPGA-Beschleunigung geplant",
+          "Physical Computing"
         ]
       }
     ]
@@ -290,16 +288,158 @@
       }
     ]
   },
-  "vision": {
-    "kicker": "ZUKUNFTSVISION",
-    "title": "VYRO-B",
-    "subtitle": "Visual Young Robot Operator — Buddy",
-    "status": "future-concept",
-    "statusLabel": "Future Concept — kein Produkt",
-    "paragraphs": [
-      "VYRO-B ist aktuell kein Produkt und auch kein konkretes Entwicklungsprojekt mit festem Zeitplan. Es handelt sich um eine langfristige Forschungsvision: einen intelligenten physischen KI-Begleiter, der Intelligence, Logic und Physical in einem System zusammenführt.",
-      "Diese Vision beschreibt eine mögliche Richtung, in die sich Auvexis Systems langfristig entwickeln könnte — nicht mehr und nicht weniger."
+  "products": {
+    "kicker": "PRODUKTE",
+    "title": "Products",
+    "intro": "Drei Produktbereiche, die auf der Auvexis Plattform aufbauen — vom aktuell im Aufbau befindlichen Knowledge Accelerator bis zu langfristigen Zukunftsvisionen.",
+    "items": [
+      {
+        "id": "knowledge-accelerator",
+        "title": "Auvexis Knowledge Accelerator",
+        "status": "concept",
+        "statusLabel": "Konzept — aktiv in Entwicklung",
+        "description": "Lokal-first Software, die lokale Daten indiziert, hasht, durchsucht, vergleicht und dedupliziert, bevor sie an AI-Agenten wie Codex, Claude Code, Claude Cowork oder AYVIE übergeben werden — als Vorverarbeitung, die redundante Kontextverarbeitung reduzieren soll.",
+        "cta": { "label": "Knowledge Accelerator ansehen", "href": "/knowledge-accelerator/" }
+      },
+      {
+        "id": "vyro-robotics",
+        "title": "VYRO / Robotics",
+        "status": "future-concept",
+        "statusLabel": "Future Concept — kein Produkt",
+        "subtitle": "VYRO-B — Visual Young Robot Operator, Buddy",
+        "description": "VYRO-B ist aktuell kein Produkt und auch kein konkretes Entwicklungsprojekt mit festem Zeitplan. Es handelt sich um eine langfristige Forschungsvision: einen intelligenten physischen KI-Begleiter, der Intelligence, Logic und Physical in einem System zusammenführt."
+      },
+      {
+        "id": "avs-beats",
+        "title": "Auvexis Studio / AvS Beats",
+        "status": "in-development",
+        "statusLabel": "In Entwicklung",
+        "description": "Auvexis Studio ist der kreative Bereich von Auvexis Systems. AvS Beats ist die dort entstehende, experimentelle KI-gestützte Musik- und Content-Pipeline."
+      }
     ]
+  },
+  "roadmap": {
+    "kicker": "ROADMAP",
+    "title": "Roadmap",
+    "intro": "Sieben Phasen, die den Weg von den Kernsystemen bis zur geplanten Hardware-Beschleunigung beschreiben — ohne feste Termine, aber mit klarer Reihenfolge.",
+    "phases": [
+      { "id": "core-systems", "number": "01", "title": "Core Systems", "status": "in-development", "description": "Grundlegende Plattform-Infrastruktur: AYVIE als zentrale Orchestrierungsebene sowie AI Workers und der Dashboard / Control Layer." },
+      { "id": "knowledge-accelerator-mvp", "number": "02", "title": "Knowledge Accelerator MVP", "status": "concept", "description": "Erste funktionsfähige Version des lokal-first Knowledge Accelerators: Indexierung, Hashing und Suche." },
+      { "id": "context-builder", "number": "03", "title": "Context Builder", "status": "concept", "description": "Aufbereitung gefilterter, deduplizierter Inhalte zu strukturiertem Kontext für AI-Agenten." },
+      { "id": "ai-agent-integration", "number": "04", "title": "AI Agent Integration", "status": "concept", "description": "Anbindung an Codex, Claude Code, Claude Cowork, AYVIE und weitere Worker." },
+      { "id": "benchmarking", "number": "05", "title": "Benchmarking", "status": "future", "description": "Transparente, nachvollziehbare Messung der tatsächlichen Effekte — Ergebnisse werden erst nach Abschluss veröffentlicht." },
+      { "id": "fpga-analysis", "number": "06", "title": "FPGA Analysis", "status": "future", "description": "Analyse, welche Workloads — Hashing, Pattern Matching, Vergleich, Filterung — für FPGA-Beschleunigung geeignet sind." },
+      { "id": "hardware-prototype", "number": "07", "title": "Hardware Prototype", "status": "future-concept", "description": "Langfristige Vision eines dedizierten Hardware-Beschleunigers für den Knowledge Accelerator." }
+    ]
+  },
+  "ecosystem": {
+    "kicker": "ARCHITEKTUR",
+    "title": "Wie die Auvexis Plattform zusammenspielt",
+    "intro": "Wissen aus Repositories und Dokumenten fließt durch den Auvexis Knowledge Accelerator zu AYVIE als zentraler Orchestrierungsebene, die es an AI Workers und Agent-Workflows wie Codex oder Claude Code weiterleitet — gesteuert und sichtbar gemacht über den Dashboard / Control Layer.",
+    "imageAlt": "Systemdiagramm: Wissensquellen fließen über den Knowledge Accelerator zu AI Workers und dem Dashboard / Control Layer, flankiert von Hardware-Knoten.",
+    "labels": {
+      "dashboard": "Dashboard / Control Layer",
+      "aiWorkers": "AI Workers",
+      "knowledgeAccelerator": "Knowledge Accelerator",
+      "knowledgeSources": "Knowledge Sources",
+      "hardwareNodes": "Hardware Nodes"
+    },
+    "note": "Visualisierung des aktuellen Architekturkonzepts — kein Abbild einer bereits vollständig implementierten Infrastruktur."
+  },
+  "knowledgeAccelerator": {
+    "meta": {
+      "title": "Auvexis Knowledge Accelerator — Auvexis Systems",
+      "description": "Lokal-first Software, die Daten vor der Übergabe an AI-Agenten indiziert, hasht, vergleicht und filtert — als Kontextvorverarbeitung für Codex, Claude Code, Claude Cowork und AYVIE."
+    },
+    "hero": {
+      "kicker": "AUVEXIS PRODUKT",
+      "status": "concept",
+      "statusLabel": "Konzept — aktiv in Entwicklung",
+      "title": "Auvexis Knowledge Accelerator",
+      "subheadline": "Lokal-first Kontextvorverarbeitung für AI-Agenten.",
+      "description": "Der Auvexis Knowledge Accelerator ist lokal-first Software (mit optionaler zukünftiger Hardware-Komponente), die lokale Daten indiziert, hasht, durchsucht, vergleicht, auf Änderungen prüft, dedupliziert und filtert — bevor sie an AI-Agenten wie Codex, Claude Code, Claude Cowork oder AYVIE übergeben werden.",
+      "ctaPrimary": { "label": "Architektur ansehen", "href": "#architecture" },
+      "ctaSecondary": { "label": "Zur Roadmap", "href": "#roadmap" },
+      "visualAlt": "Symbolische Visualisierung des Auvexis Knowledge Accelerator: ein zentraler Verarbeitungskern mit vernetzten Datenpfaden und Kontext-Elementen."
+    },
+    "problem": {
+      "kicker": "PROBLEM",
+      "title": "AI-Agenten verarbeiten oft mehr Kontext als nötig",
+      "paragraphs": [
+        "Je mehr lokale Dateien, Repositories und Dokumente ein AI-Agent durchsuchen oder laden muss, desto mehr redundanten oder unveränderten Kontext verarbeitet er dabei mit — ohne dass das immer nötig wäre.",
+        "Der Auvexis Knowledge Accelerator setzt genau hier an: als lokal-first Vorverarbeitungsschicht zwischen Ihren Daten und den AI-Agenten, die auf sie zugreifen."
+      ]
+    },
+    "solution": {
+      "kicker": "LÖSUNG",
+      "title": "Lokal-first Vorverarbeitung, bevor Kontext an Agenten geht",
+      "paragraphs": [
+        "Statt Rohdaten direkt an einen Agenten zu übergeben, indiziert und hasht der Knowledge Accelerator lokale Inhalte, erkennt Änderungen, dedupliziert wiederkehrende Inhalte und filtert auf das Relevante — mit dem Ziel, redundante Kontextverarbeitung zu reduzieren."
+      ],
+      "principles": [
+        { "title": "Local-First", "description": "Daten werden lokal verarbeitet, nicht standardmäßig an Dritte übertragen." },
+        { "title": "Context Optimization", "description": "Vorverarbeitung als Grundlage für gezieltere, weniger redundante AI-Kontexte." },
+        { "title": "Transparent entwickelt", "description": "Keine garantierten Kennzahlen — Ergebnisse werden erst nach echtem Benchmarking veröffentlicht." }
+      ]
+    },
+    "architecture": {
+      "kicker": "ARCHITEKTUR",
+      "title": "Wie der Knowledge Accelerator arbeitet",
+      "intro": "Ein mehrstufiger, lokal-first Verarbeitungspfad von Rohdaten zu optimiertem Kontext.",
+      "steps": [
+        { "id": "index", "number": "01", "title": "Index", "description": "Lokale Dateien, Repositories und Dokumente werden strukturiert erfasst." },
+        { "id": "hash", "number": "02", "title": "Hash", "description": "Inhalte werden gehasht, um Zustände eindeutig vergleichbar zu machen." },
+        { "id": "search-compare", "number": "03", "title": "Search & Compare", "description": "Inhalte werden durchsucht und gegen bekannte Zustände verglichen." },
+        { "id": "change-detect-dedupe", "number": "04", "title": "Change Detection & Dedupe", "description": "Änderungen werden erkannt, unveränderte oder doppelte Inhalte identifiziert." },
+        { "id": "filter-reduce", "number": "05", "title": "Filter & Reduce", "description": "Relevante Inhalte werden gefiltert und reduziert, bevor sie an AI-Agenten übergeben werden." }
+      ]
+    },
+    "localFirst": {
+      "kicker": "LOCAL-FIRST",
+      "title": "Ihre Daten bleiben lokal",
+      "paragraphs": [
+        "Der Auvexis Knowledge Accelerator ist als lokal-first System konzipiert: Verarbeitung findet auf Ihren eigenen Systemen statt, nicht standardmäßig in einer externen Cloud."
+      ]
+    },
+    "agentIntegration": {
+      "kicker": "AI AGENT INTEGRATION",
+      "title": "Vorverarbeiteter Kontext für die Agenten, die Sie bereits nutzen",
+      "intro": "Der Knowledge Accelerator ist als Vorverarbeitungsschicht für gängige AI-Agenten und -Umgebungen gedacht — unabhängig davon, welcher Agent am Ende den Kontext erhält.",
+      "agents": [
+        { "name": "Codex", "description": "Vorverarbeiteter, reduzierter Kontext für Codex-basierte Workflows." },
+        { "name": "Claude Code", "description": "Lokal-first Kontextaufbereitung für Claude Code Sessions." },
+        { "name": "Claude Cowork", "description": "Strukturierter Kontext für Cowork-Workflows und Automatisierung." },
+        { "name": "AYVIE", "description": "Direkte Anbindung an AYVIE, die zentrale interne Operatorin und Orchestrierungsebene von Auvexis Systems." },
+        { "name": "Weitere Worker", "description": "Offen für zusätzliche AI-Agenten und -Worker über eine gemeinsame Schnittstelle." }
+      ],
+      "note": "Keine offizielle Partnerschaft mit OpenAI, Anthropic oder anderen AI-Anbietern — die Integration bezieht sich auf die technische Anbindung an diese Tools.",
+      "visualAlt": "Symbolische Visualisierung von AYVIE als zentraler Orchestrierungsebene für mehrere AI Workers."
+    },
+    "hardware": {
+      "kicker": "HARDWARE ACCELERATION — GEPLANT",
+      "status": "future",
+      "statusLabel": "Future Development",
+      "title": "Hardware-Beschleunigung ist ein geplanter Entwicklungspfad",
+      "paragraphs": [
+        "Langfristig soll ausgewählte Workloads des Knowledge Accelerators — Hashing, Pattern Matching, Binärvergleich, Filterung und ausgewählte parallele Verarbeitungsschritte — durch dedizierte FPGA-Hardware beschleunigt werden.",
+        "Dies ist aktuell ein Entwicklungspfad, keine verfügbare Funktion. Es werden keine Geschwindigkeits- oder Effizienzversprechen gemacht, bevor entsprechende Analysen und Prototypen vorliegen."
+      ],
+      "workloads": ["Hashing", "Pattern Matching", "Binärvergleich", "Filterung", "Ausgewählte parallele Workloads"],
+      "visualAlt": "Symbolische Visualisierung eines Hardware-Chips als Sinnbild für die geplante FPGA-Beschleunigung."
+    },
+    "benchmark": {
+      "kicker": "BENCHMARKING",
+      "title": "Benchmarking in Arbeit",
+      "paragraphs": [
+        "Es gibt aktuell keine veröffentlichten Leistungskennzahlen für den Auvexis Knowledge Accelerator. Sobald belastbare Messungen vorliegen, werden sie hier transparent veröffentlicht — inklusive Methodik."
+      ]
+    },
+    "roadmapNote": {
+      "kicker": "ROADMAP",
+      "title": "Der Knowledge Accelerator in der Gesamt-Roadmap",
+      "description": "Phasen 2–4 der Auvexis Roadmap betreffen direkt den Knowledge Accelerator — von der ersten MVP-Version bis zur AI-Agent-Integration.",
+      "cta": { "label": "Vollständige Roadmap ansehen", "href": "/#roadmap" }
+    }
   },
   "about": {
     "kicker": "ÜBER AUVEXIS",

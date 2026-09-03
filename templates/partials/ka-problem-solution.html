@@ -1,0 +1,31 @@
+<section class="section" id="problem">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{ka.problem.kicker}}</p>
+      <h2 class="section-title">{{ka.problem.title}}</h2>
+    </div>
+    <div class="ka-text-block reveal">
+      {{#each ka.problem.paragraphs}}<p>{{this}}</p>{{/each}}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="solution">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{ka.solution.kicker}}</p>
+      <h2 class="section-title">{{ka.solution.title}}</h2>
+    </div>
+    <div class="ka-text-block reveal">
+      {{#each ka.solution.paragraphs}}<p>{{this}}</p>{{/each}}
+    </div>
+    <div class="ka-principles reveal">
+      {{#each ka.solution.principles}}
+      <div class="ka-principle">
+        <h3 class="ka-principle__title">{{title}}</h3>
+        <p class="ka-principle__desc">{{description}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

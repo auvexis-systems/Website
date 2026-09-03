@@ -1,0 +1,24 @@
+<section class="ecosystem section" id="ecosystem">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="kicker">{{ecosystem.kicker}}</p>
+      <h2 class="section-title">{{ecosystem.title}}</h2>
+      <p class="section-intro">{{ecosystem.intro}}</p>
+    </div>
+
+    <div class="ecosystem-diagram reveal">
+      <div class="ecosystem-diagram__frame">
+        <img class="ecosystem-diagram__image" src="{{page.assetsPrefix}}assets/ecosystem-architecture.png" alt="{{ecosystem.imageAlt}}" width="1024" height="572" loading="lazy">
+        <div class="ecosystem-diagram__labels">
+          <span class="ecosystem-label" style="--x:50%;--y:8%">{{ecosystem.labels.dashboard}}</span>
+          <span class="ecosystem-label" style="--x:50%;--y:31%">{{ecosystem.labels.aiWorkers}}</span>
+          <span class="ecosystem-label" style="--x:50%;--y:51%">{{ecosystem.labels.knowledgeAccelerator}}</span>
+          <span class="ecosystem-label" style="--x:50%;--y:74%">{{ecosystem.labels.knowledgeSources}}</span>
+          <span class="ecosystem-label" style="--x:10%;--y:41%">{{ecosystem.labels.hardwareNodes}}</span>
+          <span class="ecosystem-label ecosystem-label--duplicate" style="--x:90%;--y:41%" aria-hidden="true">{{ecosystem.labels.hardwareNodes}}</span>
+        </div>
+      </div>
+      <p class="ecosystem-diagram__note">{{ecosystem.note}}</p>
+    </div>
+  </div>
+</section>

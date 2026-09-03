@@ -35,6 +35,53 @@ function initNavToggle(): void {
   });
 }
 
+/**
+ * Two-level Platform / Products dropdowns. CSS :hover/:focus-within already
+ * shows a dropdown on desktop as the no-JS baseline; this adds explicit
+ * click-toggle + aria-expanded control on top, for touch devices, keyboard
+ * users who want to "pin" a dropdown open without hovering, and screen
+ * readers. On the mobile drawer (see main.css, max-width:1080px) dropdowns
+ * are always expanded statically, so toggling here has no visual effect
+ * there — harmless, and it keeps every link reachable before JS attaches.
+ */
+function initNavDropdowns(): void {
+  const triggers = Array.from(document.querySelectorAll<HTMLButtonElement>("[data-nav-dropdown-trigger]"));
+  if (triggers.length === 0) return;
+
+  const items = triggers
+    .map((trigger) => trigger.closest<HTMLElement>(".main-nav__item--dropdown"))
+    .filter((el): el is HTMLElement => el !== null);
+
+  const closeAll = (except?: HTMLElement): void => {
+    items.forEach((item) => {
+      if (item === except) return;
+      item.classList.remove("is-open");
+      item.querySelector<HTMLButtonElement>("[data-nav-dropdown-trigger]")?.setAttribute("aria-expanded", "false");
+    });
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const item = trigger.closest<HTMLElement>(".main-nav__item--dropdown");
+      if (!item) return;
+      const isOpen = item.classList.contains("is-open");
+      closeAll(isOpen ? undefined : item);
+      item.classList.toggle("is-open", !isOpen);
+      trigger.setAttribute("aria-expanded", String(!isOpen));
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target as Node;
+    const clickedInsideAnyDropdown = items.some((item) => item.contains(target));
+    if (!clickedInsideAnyDropdown) closeAll();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeAll();
+  });
+}
+
 function initScrollReveal(): void {
   const items = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
   if (items.length === 0) return;
@@ -194,6 +241,7 @@ function initContactForm(): void {
 
 function init(): void {
   initNavToggle();
+  initNavDropdowns();
   initScrollReveal();
   initContactForm();
 }

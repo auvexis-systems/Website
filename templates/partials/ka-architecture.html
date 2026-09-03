@@ -1,0 +1,18 @@
+<section class="section architecture section--tight" id="architecture">
+  <div class="container">
+    <div class="section-head section-head--center reveal">
+      <p class="kicker">{{ka.architecture.kicker}}</p>
+      <h2 class="section-title">{{ka.architecture.title}}</h2>
+      <p class="section-intro">{{ka.architecture.intro}}</p>
+    </div>
+    <div class="ka-steps reveal">
+      {{#each ka.architecture.steps}}
+      <div class="ka-step" id="{{id}}">
+        <span class="ka-step__number">{{number}}</span>
+        <h3 class="ka-step__title">{{title}}</h3>
+        <p class="ka-step__desc">{{description}}</p>
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>

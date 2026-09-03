@@ -13,7 +13,21 @@
     <nav class="main-nav" id="main-nav" aria-label="Hauptnavigation">
       <ul class="main-nav__list">
         {{#each header.nav}}
-        <li><a class="main-nav__link" href="{{fullHref}}">{{label}}</a></li>
+        {{#if children}}
+        <li class="main-nav__item main-nav__item--dropdown">
+          <button type="button" class="main-nav__trigger" data-nav-dropdown-trigger aria-expanded="false">
+            <span>{{label}}</span>
+            <svg class="main-nav__caret" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1l5 5 5-5" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <ul class="main-nav__dropdown" data-nav-dropdown>
+            {{#each children}}
+            <li><a class="main-nav__dropdown-link" href="{{fullHref}}">{{label}}</a></li>
+            {{/each}}
+          </ul>
+        </li>
+        {{else}}
+        <li class="main-nav__item"><a class="main-nav__link" href="{{fullHref}}">{{label}}</a></li>
+        {{/if}}
         {{/each}}
       </ul>
       <a class="btn btn--primary header-cta" href="{{page.homeHref}}#contact">{{header.cta}}</a>

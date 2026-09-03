@@ -1,0 +1,23 @@
+<section class="section" id="products">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{products.kicker}}</p>
+      <h2 class="section-title">{{products.title}}</h2>
+      <p class="section-intro">{{products.intro}}</p>
+    </div>
+
+    <div class="products-grid reveal">
+      {{#each products.items}}
+      <article class="product-card" id="{{id}}">
+        <div class="product-card__head">
+          <span class="status-badge status-badge--{{status}}">{{statusLabel}}</span>
+        </div>
+        <h3 class="product-card__title">{{title}}</h3>
+        {{#if subtitle}}<p class="product-card__subtitle">{{subtitle}}</p>{{/if}}
+        <p class="product-card__desc">{{description}}</p>
+        {{#if cta}}<a class="btn btn--ghost btn--sm product-card__cta" href="{{cta.href}}">{{cta.label}}</a>{{/if}}
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

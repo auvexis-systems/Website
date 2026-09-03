@@ -1,0 +1,24 @@
+<section class="section" id="roadmap">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{roadmap.kicker}}</p>
+      <h2 class="section-title">{{roadmap.title}}</h2>
+      <p class="section-intro">{{roadmap.intro}}</p>
+    </div>
+
+    <ol class="roadmap-timeline reveal">
+      {{#each roadmap.phases}}
+      <li class="roadmap-phase" id="{{id}}">
+        <span class="roadmap-phase__number">{{number}}</span>
+        <div class="roadmap-phase__body">
+          <div class="roadmap-phase__head">
+            <h3 class="roadmap-phase__title">{{title}}</h3>
+            <span class="status-badge status-badge--{{status}}">{{statusLabel}}</span>
+          </div>
+          <p class="roadmap-phase__desc">{{description}}</p>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</section>

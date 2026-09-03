@@ -192,6 +192,75 @@ rather than helpful. Update it if that ever changes.
   filesystem paths (all zero matches outside the pre-existing `dist/`, which
   was then rebuilt clean).
 
+## V3 — Platform / Ecosystem refresh — what changed
+
+- **Repositioned from a single project to a platform/ecosystem**: new
+  top-level areas AYVIE, AI Workers, Dashboard / Control Layer, Knowledge
+  Infrastructure, Automation, Hardware (`platform` in content, formerly
+  `solutions`), plus a `products` section (formerly the single `vision`
+  VYRO-B panel) covering the Auvexis Knowledge Accelerator, VYRO / Robotics,
+  and Auvexis Studio / AvS Beats as downstream product areas.
+- **New flagship product — Auvexis Knowledge Accelerator**: a dedicated page
+  at `/knowledge-accelerator/` / `/en/knowledge-accelerator/` (hero, problem,
+  solution, 5-step architecture, local-first principles, AI agent
+  integration for Codex/Claude Code/Claude Cowork/AYVIE, a clearly
+  future-marked hardware-acceleration section, roadmap note, benchmark
+  placeholder). Copy deliberately avoids invented benchmark numbers or
+  guaranteed savings claims — see content's `knowledgeAccelerator` key.
+- **New 7-phase Roadmap** section (Core Systems → Knowledge Accelerator MVP →
+  Context Builder → AI Agent Integration → Benchmarking → FPGA Analysis →
+  Hardware Prototype), using the same honest status vocabulary as everywhere
+  else on the site.
+- **New Ecosystem/Architecture section** on the homepage, built around a
+  real, client-supplied system diagram (`src/assets/ecosystem-architecture.png`).
+  The image itself is untouched and text-free; all 5 labels (Dashboard /
+  Control Layer, AI Workers, Knowledge Accelerator, Knowledge Sources,
+  Hardware Nodes) are real HTML/CSS elements positioned with `--x`/`--y`
+  custom properties over empty regions of the image — genuinely selectable
+  text, not baked into the picture. Below ~700px width the overlay collapses
+  into a static stacked legend instead of small overlaid text.
+- **Two-level dropdown navigation**: `Home / Platform ▾ / Products ▾ /
+  Roadmap / About / Contact`. Desktop uses CSS `:hover`/`:focus-within` as
+  the no-JS baseline, with `initNavDropdowns()` in `main.ts` adding
+  click-toggle + `aria-expanded` control on top. The mobile drawer keeps
+  dropdown children always expanded (a static indented list) rather than a
+  second collapsible layer — a JS-only accordion would hide those links
+  behind a `<button>` with no default action until JS attaches.
+- **Generic routing layer**: `build/build.mjs` now builds every page from a
+  single `PAGES` registry (`kind: "home" | "legal" | "content"`) through one
+  dispatcher, replacing the previous hardcoded `buildHomepage` /
+  `LEGAL_PAGES`+`buildLegalPages` / `build404` trio. Adding a future product
+  page is one new registry entry plus its content/partials — no new
+  hardcoded build logic. `withFullHref()` was generalized to recurse into
+  nested `children` arrays for the two-level nav, and to leave any href that
+  already starts with `/` (a real route, e.g. the Knowledge Accelerator) un-
+  prefixed instead of concatenating it onto `page.homeHref`.
+- **Sitemap is generated from the routes actually built** during the run
+  (`buildSitemap(builtRoutes)`), not a hardcoded URL array — a new `PAGES`
+  entry automatically appears in `sitemap.xml`.
+- Existing working sections (system-principle architecture, Development
+  Pipeline, Knowledge Q&A, Transparency, About, Contact), all legal pages,
+  branding, and the zero-invented-numbers transparency principle are
+  unchanged.
+- Design system was **extended, not replaced**: every new component
+  (platform/products cards, roadmap timeline, ecosystem labels, Knowledge
+  Accelerator page sections, nav dropdown) reuses the existing tokens in
+  `tokens.css` and existing patterns (`.status-badge`, `.tag`, `.kicker`,
+  `.section-title`/`.section-intro`, `.btn`) rather than introducing a new
+  visual language.
+
+### Knowledge Accelerator page visuals — now final
+
+`src/assets/ka-hero.png`, `ka-agents.png`, and `ka-hardware.png` are the
+client-supplied final renders (1672×941, 16:9) for the Knowledge Accelerator
+hero, the AYVIE/AI Workers section, and the FPGA/Hardware section
+respectively — replacing the earlier hand-drawn placeholder SVGs of the same
+names. Each is framed (border + radius, matching `.ecosystem-diagram__frame`)
+and shown at its native aspect ratio via `width:100%;height:auto` — no
+`object-fit` cropping, since a center-crop would risk cutting into any of the
+three compositions. `ecosystem-architecture.png` remains the other real,
+client-supplied image (the homepage system diagram).
+
 ## Assets/content still needed from the client
 
 - A decision on contact-form backend (serverless function vs. a form service like Formspree) once ready to move off the mailto fallback.

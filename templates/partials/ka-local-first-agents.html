@@ -1,0 +1,33 @@
+<section class="section section--tight" id="local-first">
+  <div class="container">
+    <div class="local-first-panel reveal">
+      <p class="kicker">{{ka.localFirst.kicker}}</p>
+      <h2 class="section-title">{{ka.localFirst.title}}</h2>
+      <div class="ka-text-block">
+        {{#each ka.localFirst.paragraphs}}<p>{{this}}</p>{{/each}}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="agent-integration">
+  <div class="container">
+    <div class="section-head agent-integration__head reveal">
+      <div class="agent-integration__intro">
+        <p class="kicker">{{ka.agentIntegration.kicker}}</p>
+        <h2 class="section-title">{{ka.agentIntegration.title}}</h2>
+        <p class="section-intro">{{ka.agentIntegration.intro}}</p>
+      </div>
+      <img class="agent-integration__visual" src="{{page.assetsPrefix}}assets/ka-agents.png" alt="{{ka.agentIntegration.visualAlt}}" width="1672" height="941" loading="lazy">
+    </div>
+    <div class="agent-grid reveal">
+      {{#each ka.agentIntegration.agents}}
+      <div class="agent-card">
+        <h3 class="agent-card__name">{{name}}</h3>
+        <p class="agent-card__desc">{{description}}</p>
+      </div>
+      {{/each}}
+    </div>
+    <p class="agent-integration__note">{{ka.agentIntegration.note}}</p>
+  </div>
+</section>

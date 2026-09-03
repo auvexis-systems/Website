@@ -1,0 +1,28 @@
+<section class="platform section" id="platform">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="kicker">{{platform.kicker}}</p>
+      <h2 class="section-title">{{platform.title}}</h2>
+      <p class="section-intro">{{platform.intro}}</p>
+    </div>
+
+    <div class="platform-grid">
+      {{#each platform.items}}
+      <article class="platform-card{{#if featured}} platform-card--featured{{/if}} reveal" id="{{id}}">
+        <div class="platform-card__top">
+          <span class="platform-card__icon" aria-hidden="true">{{{iconSvg}}}</span>
+          <span class="status-badge status-badge--{{status}}">{{statusLabel}}</span>
+        </div>
+        <div>
+          {{#if eyebrow}}<p class="platform-card__eyebrow">{{eyebrow}}</p>{{/if}}
+          <h3 class="platform-card__title">{{title}}</h3>
+          <p class="platform-card__desc">{{description}}</p>
+        </div>
+        <ul class="platform-card__topics">
+          {{#each topics}}<li>{{this}}</li>{{/each}}
+        </ul>
+      </article>
+      {{/each}}
+    </div>
+  </div>
+</section>

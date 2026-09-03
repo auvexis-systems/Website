@@ -1,0 +1,21 @@
+<section class="ka-hero" id="top">
+  <div class="ka-hero__bg" aria-hidden="true"></div>
+  <div class="container ka-hero__grid">
+    <div class="ka-hero__copy">
+      <div class="ka-hero__status-row">
+        <span class="status-badge status-badge--{{ka.hero.status}}">{{ka.hero.statusLabel}}</span>
+      </div>
+      <p class="kicker">{{ka.hero.kicker}}</p>
+      <h1 class="ka-hero__title">{{ka.hero.title}}</h1>
+      <p class="ka-hero__subheadline">{{ka.hero.subheadline}}</p>
+      <p class="ka-hero__desc">{{ka.hero.description}}</p>
+      <div class="hero__ctas">
+        <a class="btn btn--primary" href="{{ka.hero.ctaPrimary.href}}">{{ka.hero.ctaPrimary.label}}</a>
+        <a class="btn btn--ghost" href="{{ka.hero.ctaSecondary.href}}">{{ka.hero.ctaSecondary.label}}</a>
+      </div>
+    </div>
+    <div class="ka-hero__visual">
+      <img class="ka-hero__visual-img" src="{{page.assetsPrefix}}assets/ka-hero.png" alt="{{ka.hero.visualAlt}}" width="1672" height="941" loading="eager">
+    </div>
+  </div>
+</section>

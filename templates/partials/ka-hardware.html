@@ -1,0 +1,20 @@
+<section class="section section--tight" id="hardware-acceleration">
+  <div class="container">
+    <div class="ka-hardware-panel reveal">
+      <div class="ka-hardware-panel__head">
+        <p class="kicker" style="margin-bottom:0">{{ka.hardware.kicker}}</p>
+        <span class="status-badge status-badge--{{ka.hardware.status}}">{{ka.hardware.statusLabel}}</span>
+      </div>
+      <h2 class="section-title">{{ka.hardware.title}}</h2>
+      <div class="ka-hardware-panel__body">
+        <div class="ka-text-block">
+          {{#each ka.hardware.paragraphs}}<p>{{this}}</p>{{/each}}
+          <ul class="ka-hardware-panel__workloads">
+            {{#each ka.hardware.workloads}}<li class="tag">{{this}}</li>{{/each}}
+          </ul>
+        </div>
+        <img class="ka-hardware-panel__visual" src="{{page.assetsPrefix}}assets/ka-hardware.png" alt="{{ka.hardware.visualAlt}}" width="1672" height="941" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
