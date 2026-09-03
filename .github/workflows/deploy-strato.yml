@@ -89,12 +89,10 @@ jobs:
           STRATO_HOST: ${{ secrets.STRATO_HOST }}
           STRATO_USER: ${{ secrets.STRATO_USER }}
           STRATO_PASSWORD: ${{ secrets.STRATO_PASSWORD }}
-          STRATO_REMOTE_PATH: ${{ secrets.STRATO_REMOTE_PATH }}
         run: |
           test -n "$STRATO_HOST" || { echo "Missing STRATO_HOST"; exit 1; }
           test -n "$STRATO_USER" || { echo "Missing STRATO_USER"; exit 1; }
           test -n "$STRATO_PASSWORD" || { echo "Missing STRATO_PASSWORD"; exit 1; }
-          test -n "$STRATO_REMOTE_PATH" || { echo "Missing STRATO_REMOTE_PATH"; exit 1; }
 
       - name: Install SFTP client
         run: sudo apt-get update && sudo apt-get install -y lftp
@@ -111,7 +109,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mkdir -p \"$STRATO_REMOTE_PATH\";
+            mkdir -p website;
             bye
           "
 
@@ -128,7 +126,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror --verbose=1 \"$STRATO_REMOTE_PATH\" live-backup;
+            mirror --verbose=1 website live-backup;
             bye
           "
 
@@ -155,7 +153,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror -R --delete --verbose=1 dist/ \"$STRATO_REMOTE_PATH\";
+            mirror -R --delete --verbose=1 dist/ website;
             bye
           "
 
