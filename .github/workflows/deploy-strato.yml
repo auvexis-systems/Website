@@ -112,7 +112,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror --verbose=1 \"$STRATO_REMOTE_PATH\" live-backup;
+            mirror --verbose=1 . live-backup;
             bye
           "
 
@@ -139,7 +139,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror -R --delete --verbose=1 dist/ \"$STRATO_REMOTE_PATH\";
+            mirror -R --delete --verbose=1 dist/ .;
             bye
           "
 
