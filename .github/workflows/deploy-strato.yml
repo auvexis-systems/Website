@@ -1,0 +1,161 @@
+name: Validate or Deploy Auvexis Systems
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "Choose what this run may do"
+        required: true
+        type: choice
+        default: validate-only
+        options:
+          - validate-only
+          - deploy-production
+      confirmation:
+        description: 'For production deploy type exactly: DEPLOY AUVEXIS'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auvexis-production-deploy
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    name: Build and validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Clean build
+        run: |
+          rm -rf dist
+          npm run build
+
+      - name: Verify production output
+        shell: bash
+        run: |
+          test -f dist/index.html
+          test -f dist/404.html
+          test -f dist/robots.txt
+          test -f dist/sitemap.xml
+          test -d dist/assets
+          test -d dist/styles
+          test -d dist/scripts
+          echo "Production output looks complete."
+
+      - name: Upload validated build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: auvexis-dist-${{ github.sha }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+
+  deploy:
+    name: Backup and deploy to STRATO
+    needs: validate
+    if: ${{ inputs.action == 'deploy-production' && inputs.confirmation == 'DEPLOY AUVEXIS' }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download validated build
+        uses: actions/download-artifact@v4
+        with:
+          name: auvexis-dist-${{ github.sha }}
+          path: dist
+
+      - name: Verify required STRATO secrets
+        shell: bash
+        env:
+          STRATO_HOST: ${{ secrets.STRATO_HOST }}
+          STRATO_USER: ${{ secrets.STRATO_USER }}
+          STRATO_PASSWORD: ${{ secrets.STRATO_PASSWORD }}
+          STRATO_REMOTE_PATH: ${{ secrets.STRATO_REMOTE_PATH }}
+        run: |
+          test -n "$STRATO_HOST" || { echo "Missing STRATO_HOST"; exit 1; }
+          test -n "$STRATO_USER" || { echo "Missing STRATO_USER"; exit 1; }
+          test -n "$STRATO_PASSWORD" || { echo "Missing STRATO_PASSWORD"; exit 1; }
+          test -n "$STRATO_REMOTE_PATH" || { echo "Missing STRATO_REMOTE_PATH"; exit 1; }
+
+      - name: Install SFTP client
+        run: sudo apt-get update && sudo apt-get install -y lftp
+
+      - name: Backup current live webroot
+        shell: bash
+        env:
+          STRATO_HOST: ${{ secrets.STRATO_HOST }}
+          STRATO_USER: ${{ secrets.STRATO_USER }}
+          STRATO_PASSWORD: ${{ secrets.STRATO_PASSWORD }}
+          STRATO_REMOTE_PATH: ${{ secrets.STRATO_REMOTE_PATH }}
+        run: |
+          mkdir -p live-backup
+          lftp -u "$STRATO_USER","$STRATO_PASSWORD" "sftp://$STRATO_HOST:22" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 30;
+            mirror --verbose=1 \"$STRATO_REMOTE_PATH\" live-backup;
+            bye
+          "
+
+      - name: Archive live backup
+        run: tar -czf "auvexis-live-backup-${{ github.run_id }}.tar.gz" -C live-backup .
+
+      - name: Upload live backup artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: auvexis-live-backup-${{ github.run_id }}
+          path: auvexis-live-backup-${{ github.run_id }}.tar.gz
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Deploy dist to STRATO
+        shell: bash
+        env:
+          STRATO_HOST: ${{ secrets.STRATO_HOST }}
+          STRATO_USER: ${{ secrets.STRATO_USER }}
+          STRATO_PASSWORD: ${{ secrets.STRATO_PASSWORD }}
+          STRATO_REMOTE_PATH: ${{ secrets.STRATO_REMOTE_PATH }}
+        run: |
+          lftp -u "$STRATO_USER","$STRATO_PASSWORD" "sftp://$STRATO_HOST:22" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 30;
+            mirror -R --delete --verbose=1 dist/ \"$STRATO_REMOTE_PATH\";
+            bye
+          "
+
+      - name: Live HTTP checks
+        shell: bash
+        run: |
+          urls=(
+            "https://auvexissystems.de/"
+            "https://auvexissystems.de/en/"
+            "https://auvexissystems.de/knowledge-accelerator/"
+            "https://auvexissystems.de/en/knowledge-accelerator/"
+            "https://auvexissystems.de/impressum/"
+            "https://auvexissystems.de/datenschutz/"
+          )
+          for url in "${urls[@]}"; do
+            echo "Checking $url"
+            curl --fail --silent --show-error --location --retry 3 --max-time 20 "$url" > /dev/null
+          done
+          echo "Live checks passed."
