@@ -109,7 +109,8 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            cd website;\n            cd ..;
+            cd website;
+            cd ..;
             bye
           "
 
