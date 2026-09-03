@@ -99,6 +99,22 @@ jobs:
       - name: Install SFTP client
         run: sudo apt-get update && sudo apt-get install -y lftp
 
+      - name: Ensure STRATO webroot exists
+        shell: bash
+        env:
+          STRATO_HOST: ${{ secrets.STRATO_HOST }}
+          STRATO_USER: ${{ secrets.STRATO_USER }}
+          STRATO_PASSWORD: ${{ secrets.STRATO_PASSWORD }}
+          STRATO_REMOTE_PATH: ${{ secrets.STRATO_REMOTE_PATH }}
+        run: |
+          lftp -u "$STRATO_USER","$STRATO_PASSWORD" "sftp://$STRATO_HOST:22" -e "
+            set sftp:auto-confirm yes;
+            set net:max-retries 2;
+            set net:timeout 30;
+            mkdir -p \"$STRATO_REMOTE_PATH\";
+            bye
+          "
+
       - name: Backup current live webroot
         shell: bash
         env:
@@ -112,7 +128,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror --verbose=1 . live-backup;
+            mirror --verbose=1 \"$STRATO_REMOTE_PATH\" live-backup;
             bye
           "
 
@@ -139,7 +155,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:max-retries 2;
             set net:timeout 30;
-            mirror -R --delete --verbose=1 dist/ .;
+            mirror -R --delete --verbose=1 dist/ \"$STRATO_REMOTE_PATH\";
             bye
           "
 
